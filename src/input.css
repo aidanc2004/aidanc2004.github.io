@@ -8,5 +8,6 @@
         font-size: 1.25rem;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         scroll-behavior: smooth;
+        scrollbar-width: none;
     }
 }
