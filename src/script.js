@@ -1,3 +1,5 @@
+// Aidan Carey, 2023
+
 const header = document.getElementById("header");
 const projectsGrid = document.getElementById("projects-grid");
 const description = document.getElementById("description");

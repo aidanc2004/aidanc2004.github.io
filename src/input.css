@@ -1,3 +1,5 @@
+/* Aidan Carey, 2023 */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,6 +10,11 @@
         font-size: 1.25rem;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         scroll-behavior: smooth;
+        -ms-overflow-style: none;
         scrollbar-width: none;
+    }
+
+    *::-webkit-scrollbar {
+        display: none;
     }
 }
