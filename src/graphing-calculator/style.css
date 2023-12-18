@@ -1,0 +1,142 @@
+/* Aidan Carey, 2023 */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    display: flex;
+}
+
+input {
+    border: none;
+    border-bottom: 0.1rem lightgray solid;
+    padding: 0.1rem;
+}
+
+input:focus {
+    background-color: #f0f0f0;
+    outline: none;
+}
+
+input[type=number] {
+    appearance: textfield;
+    width: 30%;
+}
+
+button {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 0.1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    background-color: white;
+    border: 0.1rem solid lightgray;
+    border-radius: 0.2rem;
+}
+
+button:active {
+    background-color: #f0f0f0;
+}
+
+#ui {
+    border-right: 1px solid lightgray;
+}
+
+#ui form {
+    width: 200px;
+    margin: 10px;
+}
+
+#equations-list {
+    /* padding-left: 20px; */
+    list-style: none;
+}
+
+.delete {
+    margin-right: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+}
+
+#x-y-error,
+#equation-error {
+    color: red;
+}
+
+/* Help Menu */
+
+#help {
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+}
+
+#help-menu {
+    display: none;
+    position: fixed;
+    height: 60%;
+    width: 50%;
+    left: 25%;
+    top: 20%;
+    z-index: 10;
+
+    padding: 1rem;
+
+    border: black solid 0.15rem;
+    border-radius: 0.5rem;
+
+    background-color: white;
+
+    overflow: scroll;
+}
+
+#help-menu ul {
+    padding-left: 20px;
+    list-style: circle;
+}
+
+#help-menu h2 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+#help-menu p, button, ul {
+    margin-bottom: 0.5rem;
+}
+
+#author {
+    position: absolute;
+    bottom: 0px;
+    font-size: 0.8rem;
+    color: #bbb;
+}
+
+@media screen and (max-width: 520px) {
+    #ui {
+        height: 100%;
+        position: absolute;
+        border-right: none;
+    }
+
+    #help {
+        position: absolute;
+        top: 0;
+    }
+
+    #help-menu {
+        width: 80%;
+        left: 5%;
+    }
+
+    #author {
+        position: relative;
+    }
+}

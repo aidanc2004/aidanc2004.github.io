@@ -29,7 +29,7 @@ const projects = {
         link: "https://github.com/aidanc2004/Campground-Website",
         img: "Campground-WIP.png"
     },
-    "Wheelock Hall App": {
+    "Wheelock Hall": {
         description: `Being a student at Acadia, I use the online menu at Dine on Campus all the time to figure out what's on the menu,
         but I found it annoying to constantly go to the website to check so I decided to make my own frontend. The app was
         also designed to work perfectly with any other school that uses Dine on Campus for it's menu with minimal tweaking,
