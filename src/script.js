@@ -41,7 +41,7 @@ const projects = {
     "Graphing Calculator": {
         description: `A graphing calculator made with vanilla Javascript, HTML and CSS that can graph multiple different equations at once
         and show a point on a function. You can manipulate the shown domain and range by dragging and scrolling the graph.`,
-        link: "src/graphing-calculator/index.html",
+        link: "src/graphing-calculator",
         img: "Graphing-Calculator.png"
     },
     "Chatroom": {
