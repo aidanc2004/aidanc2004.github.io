@@ -1,4 +1,4 @@
-// Aidan Carey, 2023
+// Aidan Carey, 2023-2024
 
 const header = document.getElementById("header");
 const projectsGrid = document.getElementById("projects-grid");
@@ -21,44 +21,11 @@ const email = document.getElementById("email");
 emailParts = ["mailto:", "aidancarey2004", "@", "protonmail", ".com"]
 email.href = emailParts.join('')
 
-const projects = {
-    "Campground Reservation Website (Work in Progress)": {
-        description: `While working at Jeff's Hideaway campground as a summer job, I worked a lot with their campground reservation software,
-        Campground Master, and their website made using Wordpress. I noticed how these two programs worked with different databases, meaning that once someone booked a site we would have to copy it over to the other program. This inspired
-        me to create my own reservation software.`,
-        link: "https://github.com/aidanc2004/Campground-Website",
-        img: "Campground-WIP.png"
-    },
-    "Wheelock Hall": {
-        description: `Being a student at Acadia, I use the online menu at Dine on Campus all the time to figure out what's on the menu,
-        but I found it annoying to constantly go to the website to check so I decided to make my own frontend. The app was
-        also designed to work perfectly with any other school that uses Dine on Campus for it's menu with minimal tweaking,
-        only two strings.`,
-        link: "https://github.com/aidanc2004/Wheelock-Hall-App",
-        img: "Wheelock-1.png",
-        img2: "Wheelock-2.png"
-    },
-    "Graphing Calculator": {
-        description: `A graphing calculator made with vanilla Javascript, HTML and CSS that can graph multiple different equations at once
-        and show a point on a function. You can manipulate the shown domain and range by dragging and scrolling the graph.`,
-        link: "src/graphing-calculator",
-        img: "Graphing-Calculator.png"
-    },
-    "Chatroom": {
-        description: `A chatroom web app inspired by Discord, with the frontend in vanilla Javascript, HTML, and CSS and a backend server in
-        NodeJS where multiple users and join and chat with each other. Any user that joins can see the chat history of the server,
-        and can change their profile picture and username color, which will be reflected on the other users.`,
-        link: "https://github.com/aidanc2004/chatroom",
-        img: "Chatroom.png"
-    },
-    "C++ Sorting Visualizations": {
-        description: `A C++ and SFML program which showcases different sorting algorithms and the amount of steps it takes to do complete them.
-        This includes alogrithms such as selection sort, insertion sort, quick sort, and also more impractical algorithms such as
-        bogo sort and sleep sort.`,
-        link: "https://github.com/aidanc2004/Cpp-Sorting-Visualization",
-        img: "Sorting.png"
-    }
-};
+// Load projects from json
+let projects = undefined;
+fetch('./projects.json')
+    .then((response) => projects = response.json())
+    .then((json) => projects = json);
 
 // Make all of the projects clickable
 for (let project of projectsGrid.children) {
