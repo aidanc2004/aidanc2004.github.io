@@ -23,7 +23,7 @@ email.href = emailParts.join('')
 
 // Load projects from json
 let projects = undefined;
-fetch('./projects.json')
+fetch('/src/projects.json')
     .then((response) => projects = response.json())
     .then((json) => projects = json);
 
