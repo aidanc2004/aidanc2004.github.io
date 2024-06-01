@@ -36,10 +36,12 @@
     </div>
     
     <!-- Information about myself -->
-    <div id="about" class="p-4 bg-gray flex flex-col items-center    min-h-screen justify-center">
+    <div id="about" class="p-4 bg-gray flex flex-col items-center min-h-screen justify-center">
         <h1 class="text-pink text-3xl">About</h1>
-        <p class="py-4">
-            Hello, I'm Aidan. I'm a third year computer science student at Acadia University and I program as a hobby often.
+        <p class="py-4 w-[80vw]">
+            Hello, I'm Aidan. I'm a third year computer science student at Acadia University and I often program as a hobby.
+            I started learning to write simple programs when I was in grade 9 with Python and C++, and I've had a passion for programming ever since.
+            As a hobby I enjoy automating and simplifying any common tasks I need to do or making small toy programs to experiment with new concepts.
         </p>
         
         <h2 class="text-purple text-2xl">Skills</h2>
@@ -52,11 +54,11 @@
 
         <h2 class="text-purple text-2xl">Interests</h2>
         <ul class="list-disc py-4 w-[80vw]">
-            <li>...</li>
+            <li>Perl programming</li>
         </ul>
 
         <h2 class="text-purple text-2xl">Contact</h2>
-        <!-- TODO: Hover -->
+        
         <ul class="pt-4 w-[80vw] flex items-center justify-center">
             <li class="px-1">
                 <a target="_blank" id="email" class="text-yellow italic hover:drop-shadow-[0_0_0.5rem_#fa508c] transition-[drop_shadow] duration-150 ease-in-out">
@@ -84,20 +86,24 @@
         <!-- TODO: Generate this using a JSON file and JS -->
         <div id="projects-grid" class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-[90vw]">
             <div class="border-2 bg-dark-gray border-gray rounded-lg m-2 p-4 hover:drop-shadow-[0_0_0.5rem_#fa508c] cursor-pointer transition-[drop_shadow] duration-150 ease-in-out">
+                <h2 class="text-purple">Game of Life</h2>
+                <p>Implementation of Conway's Game of Life in C with Raylib.</p>
+                <img src="/src/imgs/Game-Of-Life.png" alt="Game of Life" class="pt-4">
+            </div>
+            <div class="border-2 bg-dark-gray border-gray rounded-lg m-2 p-4 hover:drop-shadow-[0_0_0.5rem_#fa508c] cursor-pointer transition-[drop_shadow] duration-150 ease-in-out">
                 <h2 class="text-purple">acorn-downloader</h2>
-                <p>A resource downloader for Acadia University's Moodle written in Perl.</p>
-                
+                <p>A resource downloader for Acadia University's Moodle (Acorn) written in Perl.</p>
+                <img src="/src/imgs/Acorn-Downloader.png" alt="acorn-downloader" class="pt-4">
             </div>
             <div class="border-2 bg-dark-gray border-gray rounded-lg m-2 p-4 hover:drop-shadow-[0_0_0.5rem_#fa508c] cursor-pointer transition-[drop_shadow] duration-150 ease-in-out">
                 <h2 class="text-purple">wheelock-perl</h2>
                 <p>A command-line frontend for Acadia University's Wheelock Hall written in Perl.</p>
-                
+                <img src="/src/imgs/Wheelock-Perl.png" alt="wheelock-perl" class="pt-4">
             </div>
             <div class="border-2 bg-dark-gray border-gray rounded-lg m-2 p-4 hover:drop-shadow-[0_0_0.5rem_#fa508c] cursor-pointer transition-[drop_shadow] duration-150 ease-in-out">
                 <h2 class="text-purple">Campground Reservation Website</h2>
-                <p>A Ruby on Rails web application where customers can book
-                   reservations for a campsite.</p>
-                <img src="/src/imgs/Campground-WIP.png" alt="Campground Website WIP" class="pt-4">
+                <p>A Ruby on Rails web application where customers can book reservations for a campsite.</p>
+                <img src="/src/imgs/Campground.png" alt="Campground Website" class="pt-4">
             </div>
             <div class="border-2 bg-dark-gray border-gray rounded-lg m-2 p-4 hover:drop-shadow-[0_0_0.5rem_#fa508c] cursor-pointer transition-[drop_shadow] duration-150 ease-in-out">
                 <h2 class="text-purple">Wheelock Hall</h2>
@@ -110,15 +116,11 @@
                 <img src="/src/imgs/Graphing-Calculator.png" alt="Graph" class="pt-4">
             </div>
             <div class="border-2 bg-dark-gray border-gray rounded-lg m-2 p-4 hover:drop-shadow-[0_0_0.5rem_#fa508c] cursor-pointer transition-[drop_shadow] duration-150 ease-in-out">
-                <h2 class="text-purple">Chatroom</h2>
+                <h2 class="text-purple">NodeJS Chatroom</h2>
                 <p>A Discord-like chatroom written in JavaScript and NodeJS using WebSockets.</p>
                 <img src="/src/imgs/Chatroom.png" alt="Chatroom">
             </div>
-            <div class="border-2 bg-dark-gray border-gray rounded-lg m-2 p-4 hover:drop-shadow-[0_0_0.5rem_#fa508c] cursor-pointer transition-[drop_shadow] duration-150 ease-in-out">
-                <h2 class="text-purple">Game of Life</h2>
-                <p>Basic text-based implementation of Conway's Game of Life in C.</p>
-                
-            </div>
+            
             <div class="border-2 bg-dark-gray border-gray rounded-lg m-2 p-4 hover:drop-shadow-[0_0_0.5rem_#fa508c] cursor-pointer transition-[drop_shadow] duration-150 ease-in-out">
                 <h2 class="text-purple">C++ Sorting Visualizations</h2>
                 <p>A sorting algorithm visualizations written in C++ with SFML.</p>
