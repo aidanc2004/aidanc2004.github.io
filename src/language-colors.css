@@ -1,0 +1,15 @@
+/* Language Colors */
+
+.perl-border { border-color: #0198c1; }
+.c-border { border-color: #545454; }
+.js-border { border-color: #f2e059; }
+.ruby-border { border-color: #701516; }
+.swift-border { border-color: #ef4f37; }
+.cpp-border { border-color: #f24b7d; }
+
+.perl-bg { background-color: #0198c1; }
+.c-bg { background-color: #545454; }
+.js-bg { background-color: #f2e059; }
+.ruby-bg { background-color: #701516; }
+.swift-bg { background-color: #ef4f37; }
+.cpp-bg { background-color: #f24b7d; }
