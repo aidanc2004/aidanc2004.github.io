@@ -591,12 +591,12 @@ video {
   margin-right: 0.25rem;
 }
 
-.mt-2 {
-  margin-top: 0.5rem;
-}
-
 .mr-8 {
   margin-right: 2rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
 }
 
 .block {
@@ -643,17 +643,12 @@ video {
   min-height: 100vh;
 }
 
-.w-2 {
-  width: 0.5rem;
-}
-
-.w-fit {
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
 .w-10 {
   width: 2.5rem;
+}
+
+.w-2 {
+  width: 0.5rem;
 }
 
 .w-8 {
@@ -670,6 +665,11 @@ video {
 
 .w-\[90vw\] {
   width: 90vw;
+}
+
+.w-fit {
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .w-screen {
@@ -732,14 +732,14 @@ video {
   border-width: 4px;
 }
 
-.border-gray {
-  --tw-border-opacity: 1;
-  border-color: rgb(45 47 66 / var(--tw-border-opacity));
-}
-
 .border-dark-gray {
   --tw-border-opacity: 1;
   border-color: rgb(31 34 47 / var(--tw-border-opacity));
+}
+
+.border-gray {
+  --tw-border-opacity: 1;
+  border-color: rgb(45 47 66 / var(--tw-border-opacity));
 }
 
 .bg-dark-gray {
@@ -761,14 +761,14 @@ video {
   padding: 1rem;
 }
 
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
 .px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
+}
+
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .py-0 {
@@ -781,10 +781,6 @@ video {
   padding-bottom: 1rem;
 }
 
-.pt-4 {
-  padding-top: 1rem;
-}
-
 .pb-1 {
   padding-bottom: 0.25rem;
 }
@@ -793,13 +789,12 @@ video {
   padding-bottom: 0.5rem;
 }
 
-.text-center {
-  text-align: center;
+.pt-4 {
+  padding-top: 1rem;
 }
 
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+.text-center {
+  text-align: center;
 }
 
 .text-2xl {
@@ -817,6 +812,11 @@ video {
   line-height: 2.5rem;
 }
 
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
@@ -830,11 +830,6 @@ video {
   font-style: italic;
 }
 
-.text-purple {
-  --tw-text-opacity: 1;
-  color: rgb(230 161 255 / var(--tw-text-opacity));
-}
-
 .text-green {
   --tw-text-opacity: 1;
   color: rgb(88 184 150 / var(--tw-text-opacity));
@@ -843,6 +838,11 @@ video {
 .text-pink {
   --tw-text-opacity: 1;
   color: rgb(250 80 140 / var(--tw-text-opacity));
+}
+
+.text-purple {
+  --tw-text-opacity: 1;
+  color: rgb(230 161 255 / var(--tw-text-opacity));
 }
 
 .text-yellow {
@@ -927,12 +927,12 @@ video {
   transition-duration: 700ms;
 }
 
-.ease-in-out {
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 .ease-in {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
+.ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hover\:text-pink:hover {
