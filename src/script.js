@@ -1,7 +1,10 @@
 // Aidan Carey, 2023-2024
 
 const header = document.getElementById("header");
-const projectsGrid = document.getElementById("projects-grid");
+const headerImage = document.getElementById("picture");
+const headerName = document.getElementById("headerName");
+const headerScroll = document.getElementById("headerScroll");
+const projectsGrid = document.getElementById("projectsGrid");
 const description = document.getElementById("description");
 const projectTitle = document.getElementById("projectTitle");
 const projectLink = document.getElementById("projectLink");
@@ -14,75 +17,135 @@ const closeDescription = document.getElementById("closeDescription");
 closeDescription.addEventListener("click", toggleDescription)
 
 // Transition on loading website
-header.style.opacity = 1;
+headerImage.style.opacity = 1;
+headerName.style.opacity = 1;
+headerScroll.style.opacity = 1;
 
 // Obscure email to hide from spam bots
 const email = document.getElementById("email");
 emailParts = ["mailto:", "aidancarey2004", "@", "protonmail", ".com"]
 email.href = emailParts.join('')
 
-// Load projects
-let projects = {
-    "Game of Life": {
+// Projects JSON
+const github = "https://github.com/aidanc2004/";
+
+let projects = [
+    {
+        "name": "Shell",
+        "shortDesc": "Very simple shell written in C.",
+        "description": `A very simple shell I wrote to get more familiar with C and low level programming.`,
+        "link": `${github}shell`,
+    },
+    {
+        "name": "Game of Life",
+        "shortDesc": "Implementation of Conway's Game of Life in C with Raylib.",
+        "thumb": "Game-Of-Life.png",
         "description": `A graphical implmentation of John Conway's Game of Life, a cellular automata simulation where cells live if they have 2-3 neighbours,
-        die if they have >3 or <2 neighbours, and a dead cell becomes alive with 3 neighbours. It's in C with the Raylib graphics library I wrote while learning
-        cellular automata. It takes the number of rows and columns as command line arguments and clicking will add or remove a cell.`,
-        "link": "https://github.com/aidanc2004/game-of-life",
+            die if they have >3 or <2 neighbours, and a dead cell becomes alive with 3 neighbours. It's in C with the Raylib graphics library I wrote while learning
+            cellular automata. It takes the number of rows and columns as command line arguments and clicking will add or remove a cell.`,
+        "link": `${github}game-of-life`,
         "img": "Game-Of-Life.gif"
     },
-    "acorn-downloader": {
+    {
+        "name": "acorn-downloader",
+        "shortDesc": "A resource downloader for Acadia University's Moodle (Acorn) written in Perl.",
         "description": `I always make sure to download all of the course materials from all of my classes, which can help a lot if Acorn (Acadia's Moodle) is down,
-        I'm away from internet, or I want to look back at it after I finish the course, but it can be time consuming to scan through all of my courses for anything
-        that I've missed or haven't downloaded. To make this easier, I made a web scraper using Perl with WWW::Mechanize to automatically login and download
-        all resources from all of my in-progress courses into seperate directories.`,
-        "link": "https://github.com/aidanc2004/acorn-downloader",
+            I'm away from internet, or I want to look back at it after I finish the course, but it can be time consuming to scan through all of my courses for anything
+            that I've missed or haven't downloaded. To make this easier, I made a web scraper using Perl with WWW::Mechanize to automatically login and download
+            all resources from all of my in-progress courses into seperate directories.`,
+        "link": `${github}acorn-downloader`,
         "img": "Acorn-Downloader.png"
     },
-    "wheelock-perl": {
+    {
+        "name": "wheelock-perl",
+        "shortDesc": "A command-line frontend for Acadia University's Wheelock Hall written in Perl.",
         "description": `I spend a lot of time working in the terminal, so I decided to quickly reimplement my Swift frontend for Acadia University's dining hall as
         a command line app using Perl. You can choose a period to view (breakfast, lunch, dinner), view the menu at a specific date, and filter by categories.`,
-        "link": "https://github.com/aidanc2004/wheelock-perl",
+        "link": `${github}wheelock-perl`,
         "img": "Wheelock-Perl.png"
     },
-    "Campground Reservation Website": {
+    {
+        "name": "Campground Reservation Website",
+        "shortDesc": "A Ruby on Rails web application where customers can book reservations for a campsite.",
         "description": "While working at Jeff's Hideaway campground as a summer job, I worked a lot with their campground reservation software,\n        Campground Master, and their website made using Wordpress. I noticed how these two programs worked with different databases, meaning that once\n        someone booked a site we would have to copy it over to the other program. This inspired me to create my own reservation software.",
-        "link": "https://github.com/aidanc2004/Campground-Website",
-        "img": "Campground-WIP.png"
+        "link": `${github}Campground-Website`,
+        "img": "Campground.png"
     },
-    "Wheelock Hall": {
+    {
+        "name": "Wheelock Hall",
+        "shortDesc": "An iOS and macOS app for Acadia University's dining hall.",
+        "thumb": "Wheelock-Hall.png",
         "description": "Being a student at Acadia, I use the online menu at Dine on Campus all the time to figure out what's on the menu,\n        but I found it annoying to constantly need go to the website to check so I decided to make my own frontend. The app was\n        also designed to work with any other school that uses Dine on Campus for it's menu with minimal tweaking.",
-        "link": "https://github.com/aidanc2004/Wheelock-Hall-App",
+        "link": `${github}Wheelock-Hall-App`,
         "img": "Wheelock-1.png",
         "img2": "Wheelock-2.png"
     },
-    "Graphing Calculator": {
+    {
+        "name": "Graphing Calculator",
+        "shortDesc": "A graphing calculator made with JavaScript and HTML canvas.",
         "description": "A graphing calculator made with HTML, CSS and vanilla Javascript that can graph multiple different equations at once\n        and show a clicked point on a function. You can manipulate the shown domain and range by dragging and scrolling the graph. There are\n        also example equations in the help menu in the bottom left.",
         "link": "/src/graphing-calculator",
         "img": "Graphing-Calculator.png",
         "linkName": "Page"
     },
-    "NodeJS Chatroom": {
+    {
+        "name": "NodeJS Chatroom",
+        "shortDesc": "A Discord-like chatroom written in JavaScript and NodeJS using WebSockets.",
         "description": "A very simple proof of concept chatroom web app inspired by Discord, with the frontend in vanilla Javascript, HTML, and CSS and\n        a backend server in NodeJS where multiple users and join and chat with each other. Any user that joins can see the chat history of the server,\n        and can change their profile picture and username color, which will be reflected on the other users.",
-        "link": "https://github.com/aidanc2004/chatroom",
+        "link": `${github}chatroom`,
         "img": "Chatroom.png"
     },
-    "C++ Sorting Visualizations": {
+    {
+        "name": "C++ Sorting Visualizations",
+        "shortDesc": "A sorting algorithm visualizations written in C++ with SFML.",
         "description": "A C++ and SFML program which showcases different sorting algorithms and the amount of steps it takes to do complete them.\n        This includes alogrithms such as selection sort, insertion sort, quick sort, and also more impractical algorithms such as\n        bogo sort and sleep sort.",
         "link": "https://github.com/aidanc2004/Cpp-Sorting-Visualization",
         "img": "Sorting.png"
     }
-};
+];
+
+// Generate projects from array of objects
+for (let i = 0; i < projects.length; i++) {
+    let project = projects[i];
+
+    let projectDiv = document.createElement("div");
+    projectDiv.className = `border-2 bg-dark-gray border-gray rounded-lg m-2 p-4 hover:drop-shadow-[0_0_0.5rem_#fa508c]
+                            cursor-pointer transition-[drop_shadow] duration-150 ease-in-out`;
+
+    let projectName = document.createElement("h2");
+    projectName.textContent = project.name;
+    projectName.className = "text-purple";
+
+    let projectShortDesc = document.createElement("p");
+    projectShortDesc.textContent = project.shortDesc;
+
+    let projectThumb = document.createElement("img");
+
+    if (project.thumb == undefined) project.thumb = project.img;
+
+    projectThumb.src = "/src/imgs/" + project.thumb;
+    projectThumb.alt = project.name;
+    projectThumb.className = "pt-4";
+
+    projectDiv.appendChild(projectName);
+    projectDiv.appendChild(projectShortDesc);
+    projectDiv.appendChild(projectThumb);
+
+    projectsGrid.appendChild(projectDiv);
+}
 
 // Make all of the projects clickable
-for (let project of projectsGrid.children) {
-    project.addEventListener("click", () => {
-        projectTitle.textContent = project.children[0].textContent;
+for (let projectDiv of projectsGrid.children) {
+    projectDiv.addEventListener("click", () => {
+        projectTitle.textContent = projectDiv.children[0].textContent;
 
-        const description = projects[projectTitle.textContent].description;
-        const img = projects[projectTitle.textContent].img;
-        const img2 = projects[projectTitle.textContent].img2;
-        const link = projects[projectTitle.textContent].link;
-        const linkName = projects[projectTitle.textContent].linkName;
+        let project = projects.find(project => project.name == projectTitle.textContent);
+
+        const description = project.description;
+        const img = project.img;
+        const img2 = project.img2;
+        const link = project.link;
+        const linkName = project.linkName;
 
         // Get description based on title
         projectDescription.textContent = description;

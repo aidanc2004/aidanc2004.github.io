@@ -10,15 +10,21 @@
     <title>Aidan Carey</title>
 </head>
 <body class="bg-dark-gray">
-    <header id="header" class="h-screen flex items-center flex-row max-sm:flex-col max-sm:text-center  justify-center bg-dark-gray opacity-0 transition-opacity ease-in delay-100 duration-500">
-        <img src="/src/imgs/Aidan.jpg" alt="Picture"
-             class="rounded-full aspect-square h-40 mr-8 max-sm:mr-0 drop-shadow-[0_0_0.5rem_#fa508c] grayscale">
-        <div>
+    <header id="header" class="h-screen flex items-center flex-row max-sm:flex-col max-sm:text-center justify-center bg-dark-gray">
+        <!-- TEMPORARY PICTURE -->
+        <img src="/src/imgs/Aidan.png" alt="Picture" id="picture"
+            class="rounded-full aspect-square h-40 mr-8 max-sm:mr-0 drop-shadow-[0_0_0.5rem_#fa508c] grayscale
+                   opacity-0 transition-opacity ease-in delay-100 duration-700">
+        <!-- TEMPORARY PICTURE -->
+        <div class="opacity-0 transition-opacity ease-in delay-[800ms] duration-700" id="headerName">
             <h1 class="text-green text-4xl">$aidan_carey</h1>
             <p>Third Year Computer Science Student at Acadia University</p>
         </div>
         
-        <a id="scroll" href="#about" class="absolute bottom-4 opacity-50 px-2 rounded-full hover:opacity-80 hover:drop-shadow-[0_0_0.5rem_#fa508c] transition-[drop_shadow] ease-in-out duration-300">V</a>
+        <div id="headerScroll" class="absolute bottom-4 opacity-0 transition-opacity ease-in delay-[1600ms] duration-700">
+            <a href="#about" class="opacity-50 px-2 rounded-full hover:opacity-80 hover:drop-shadow-[0_0_0.5rem_#fa508c] transition-[drop_shadow] ease-in-out duration-300">V</a>
+        </div>
+        
     </header>
 
     <!-- Where the project's description will be once clicked -->
@@ -83,50 +89,7 @@
         <h1 class="text-pink text-3xl">Projects</h1>
         <p class="py-4">Click for more information. From latest to oldest.</p>
 
-        <!-- TODO: Generate this using a JSON file and JS -->
-        <div id="projects-grid" class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-[90vw]">
-            <div class="border-2 bg-dark-gray border-gray rounded-lg m-2 p-4 hover:drop-shadow-[0_0_0.5rem_#fa508c] cursor-pointer transition-[drop_shadow] duration-150 ease-in-out">
-                <h2 class="text-purple">Game of Life</h2>
-                <p>Implementation of Conway's Game of Life in C with Raylib.</p>
-                <img src="/src/imgs/Game-Of-Life.png" alt="Game of Life" class="pt-4">
-            </div>
-            <div class="border-2 bg-dark-gray border-gray rounded-lg m-2 p-4 hover:drop-shadow-[0_0_0.5rem_#fa508c] cursor-pointer transition-[drop_shadow] duration-150 ease-in-out">
-                <h2 class="text-purple">acorn-downloader</h2>
-                <p>A resource downloader for Acadia University's Moodle (Acorn) written in Perl.</p>
-                <img src="/src/imgs/Acorn-Downloader.png" alt="acorn-downloader" class="pt-4">
-            </div>
-            <div class="border-2 bg-dark-gray border-gray rounded-lg m-2 p-4 hover:drop-shadow-[0_0_0.5rem_#fa508c] cursor-pointer transition-[drop_shadow] duration-150 ease-in-out">
-                <h2 class="text-purple">wheelock-perl</h2>
-                <p>A command-line frontend for Acadia University's Wheelock Hall written in Perl.</p>
-                <img src="/src/imgs/Wheelock-Perl.png" alt="wheelock-perl" class="pt-4">
-            </div>
-            <div class="border-2 bg-dark-gray border-gray rounded-lg m-2 p-4 hover:drop-shadow-[0_0_0.5rem_#fa508c] cursor-pointer transition-[drop_shadow] duration-150 ease-in-out">
-                <h2 class="text-purple">Campground Reservation Website</h2>
-                <p>A Ruby on Rails web application where customers can book reservations for a campsite.</p>
-                <img src="/src/imgs/Campground.png" alt="Campground Website" class="pt-4">
-            </div>
-            <div class="border-2 bg-dark-gray border-gray rounded-lg m-2 p-4 hover:drop-shadow-[0_0_0.5rem_#fa508c] cursor-pointer transition-[drop_shadow] duration-150 ease-in-out">
-                <h2 class="text-purple">Wheelock Hall</h2>
-                <p>An iOS and macOS app for Acadia University's dining hall.</p>
-                <img src="/src/imgs/Wheelock-Hall.png" alt="Wheelock Hall" class="pt-4">
-            </div>
-            <div class="border-2 bg-dark-gray border-gray rounded-lg m-2 p-4 hover:drop-shadow-[0_0_0.5rem_#fa508c] cursor-pointer transition-[drop_shadow] duration-150 ease-in-out">
-                <h2 class="text-purple">Graphing Calculator</h2>
-                <p>A graphing calculator made with JavaScript and HTML canvas.</p>
-                <img src="/src/imgs/Graphing-Calculator.png" alt="Graph" class="pt-4">
-            </div>
-            <div class="border-2 bg-dark-gray border-gray rounded-lg m-2 p-4 hover:drop-shadow-[0_0_0.5rem_#fa508c] cursor-pointer transition-[drop_shadow] duration-150 ease-in-out">
-                <h2 class="text-purple">NodeJS Chatroom</h2>
-                <p>A Discord-like chatroom written in JavaScript and NodeJS using WebSockets.</p>
-                <img src="/src/imgs/Chatroom.png" alt="Chatroom">
-            </div>
-            
-            <div class="border-2 bg-dark-gray border-gray rounded-lg m-2 p-4 hover:drop-shadow-[0_0_0.5rem_#fa508c] cursor-pointer transition-[drop_shadow] duration-150 ease-in-out">
-                <h2 class="text-purple">C++ Sorting Visualizations</h2>
-                <p>A sorting algorithm visualizations written in C++ with SFML.</p>
-                <img src="/src/imgs/Sorting.png" alt="Sorting Algorithm">
-            </div>
-        </div>
+        <div id="projectsGrid" class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-[90vw]"></div>
     </div>
 
     <footer class="bg-gray p-4 text-center">
