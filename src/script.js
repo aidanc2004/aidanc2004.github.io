@@ -141,7 +141,9 @@ for (let i = 0; i < projects.length; i++) {
     // Language tag
     let language = project.lang;
     let languageLower = language.toLowerCase();
-    if (language == "C++") languageLower = "cpp";
+    if (language == "C++") {
+        languageLower = "cpp"
+    };
 
     let languageTagDiv = document.createElement("div");
     languageTagDiv.className = `flex w-fit mt-2 px-2 items-center rounded-full border-2 ${languageLower}-border`;
