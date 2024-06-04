@@ -1,6 +1,6 @@
 // Aidan Carey, 2023-2024
 
-const header = document.getElementById("header");
+// const header = document.getElementById("header");
 const headerImage = document.getElementById("picture");
 const headerName = document.getElementById("headerName");
 const headerScroll = document.getElementById("headerScroll");
@@ -13,6 +13,7 @@ const projectImg = document.getElementById("projectImg");
 const projectImg2 = document.getElementById("projectImg2");
 const blur = document.getElementById("blur");
 const closeDescription = document.getElementById("closeDescription");
+const headerAbout = document.getElementById("headerAbout");
 
 closeDescription.addEventListener("click", toggleDescription)
 
@@ -20,6 +21,7 @@ closeDescription.addEventListener("click", toggleDescription)
 headerImage.style.opacity = 1;
 headerName.style.opacity = 1;
 headerScroll.style.opacity = 1;
+headerAbout.style.opacity = 1;
 
 // Obscure email to hide from spam bots
 const email = document.getElementById("email");
@@ -35,6 +37,7 @@ let projects = [
         "shortDesc": "Very simple shell written in C.",
         "description": `A very simple shell I wrote to get more familiar with C and low level programming.`,
         "link": `${github}shell`,
+        "img": "Shell-WIP.png",
         "lang": "C"
     },
     {
@@ -90,17 +93,10 @@ let projects = [
         "name": "Graphing Calculator",
         "shortDesc": "A graphing calculator made with JavaScript and HTML canvas.",
         "description": "A graphing calculator made with HTML, CSS and vanilla Javascript that can graph multiple different equations at once\n        and show a clicked point on a function. You can manipulate the shown domain and range by dragging and scrolling the graph. There are\n        also example equations in the help menu in the bottom left.",
+        "thumb": "Graphing-Calculator-Thumb.png",
         "link": "/src/graphing-calculator",
         "linkName": "Page",
         "img": "Graphing-Calculator.png",
-        "lang": "JS"
-    },
-    {
-        "name": "NodeJS Chatroom",
-        "shortDesc": "A Discord-like chatroom written in JavaScript and NodeJS using WebSockets.",
-        "description": "A very simple proof of concept chatroom web app inspired by Discord, with the frontend in vanilla Javascript, HTML, and CSS and\n        a backend server in NodeJS where multiple users and join and chat with each other. Any user that joins can see the chat history of the server,\n        and can change their profile picture and username color, which will be reflected on the other users.",
-        "link": `${github}chatroom`,
-        "img": "Chatroom.png",
         "lang": "JS"
     },
     {
@@ -118,8 +114,9 @@ for (let i = 0; i < projects.length; i++) {
     let project = projects[i];
 
     let projectDiv = document.createElement("div");
-    projectDiv.className = `border-2 bg-dark-gray border-gray rounded-lg m-2 p-4 hover:drop-shadow-[0_0_0.5rem_#fa508c]
-                            cursor-pointer transition-[drop_shadow] duration-150 ease-in-out`;
+    projectDiv.className =
+        `border-2 bg-dark-gray border-gray rounded-lg m-2 p-4 hover:drop-shadow-[0_0_0.5rem_#fa508c]
+         cursor-pointer transition-[drop_shadow] duration-150 ease-in-out flex flex-col justify-around`;
 
     // Project Title
     let projectName = document.createElement("h2");
@@ -145,6 +142,9 @@ for (let i = 0; i < projects.length; i++) {
         languageLower = "cpp"
     };
 
+    let flexGrowTen = document.createElement("div");
+    flexGrowTen.style = "margin: auto;";
+
     let languageTagDiv = document.createElement("div");
     languageTagDiv.className = `flex w-fit mt-2 px-2 items-center rounded-full border-2 ${languageLower}-border`;
 
@@ -161,6 +161,7 @@ for (let i = 0; i < projects.length; i++) {
     projectDiv.appendChild(projectName);
     projectDiv.appendChild(projectShortDesc);
     projectDiv.appendChild(projectThumb);
+    projectDiv.appendChild(flexGrowTen);
     projectDiv.appendChild(languageTagDiv)
 
     projectsGrid.appendChild(projectDiv);

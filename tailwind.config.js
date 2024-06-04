@@ -10,6 +10,9 @@ module.exports = {
       "purple": "#e6a1ff",
       "yellow": "#fae8b6"
     },
+    fontFamily: {
+      'sans': ['Roboto', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'Arial', 'sans-serif']
+    },
     extend: {},
   },
   plugins: [],

@@ -8,7 +8,8 @@
     * {
         color: #fff0f5;
         font-size: 1.25rem;
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-family: 'Roboto', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'Arial', 'sans-serif';
+        font-weight: 300;
         scroll-behavior: smooth;
         -ms-overflow-style: none;
         scrollbar-width: none;
