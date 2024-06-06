@@ -6,6 +6,7 @@
 .ruby-border { border-color: #701516; }
 .swift-border { border-color: #ef4f37; }
 .cpp-border { border-color: #f24b7d; }
+.python-border { border-color: #306794; }
 
 .perl-bg { background-color: #0198c1; }
 .c-bg { background-color: #545454; }
@@ -13,6 +14,7 @@
 .ruby-bg { background-color: #701516; }
 .swift-bg { background-color: #ef4f37; }
 .cpp-bg { background-color: #f24b7d; }
+.python-bg { background-color: #306794; }
 
 .flex-shrink-10 {
     flex-shrink: 10;

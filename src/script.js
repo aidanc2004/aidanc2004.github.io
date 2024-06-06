@@ -3,7 +3,9 @@
 // const header = document.getElementById("header");
 const headerImage = document.getElementById("picture");
 const headerName = document.getElementById("headerName");
+const headerProfile = document.getElementById("headerName");
 const headerScroll = document.getElementById("headerScroll");
+const headerContact = document.getElementById("headerContact");
 const projectsGrid = document.getElementById("projectsGrid");
 const description = document.getElementById("description");
 const projectTitle = document.getElementById("projectTitle");
@@ -22,11 +24,12 @@ headerImage.style.opacity = 1;
 headerName.style.opacity = 1;
 headerScroll.style.opacity = 1;
 headerAbout.style.opacity = 1;
+headerContact.style.opacity = 1;
 
 // Obscure email to hide from spam bots
 const email = document.getElementById("email");
-emailParts = ["mailto:", "aidancarey2004", "@", "protonmail", ".com"]
-email.href = emailParts.join('')
+emailParts = [".com", "protonmail", "@", "aidancarey2004", "mailto:"]
+email.href = emailParts.reverse().join('')
 
 // Projects JSON
 const github = "https://github.com/aidanc2004/";
@@ -53,14 +56,14 @@ let projects = [
     },
     {
         "name": "acorn-downloader",
-        "shortDesc": "A resource downloader for Acadia University's Moodle (Acorn) written in Perl.",
+        "shortDesc": "A web scraper to download resources from Acadia University's Moodle (Acorn) written in Python.",
         "description": `I always make sure to download all of the course materials from all of my classes, which can help a lot if Acorn (Acadia's Moodle) is down,
             I'm away from internet, or I want to look back at it after I finish the course, but it can be time consuming to scan through all of my courses for anything
-            that I've missed or haven't downloaded. To make this easier, I made a web scraper using Perl with WWW::Mechanize to automatically login and download
+            that I've missed or haven't downloaded. To make this easier, I made a web scraper using Python with Mechanize to automatically login and download
             all resources from all of my in-progress courses into seperate directories.`,
         "link": `${github}acorn-downloader`,
         "img": "Acorn-Downloader.png",
-        "lang": "Perl"
+        "lang": "Python"
     },
     {
         "name": "wheelock-perl",
@@ -133,7 +136,7 @@ for (let i = 0; i < projects.length; i++) {
     let projectThumb = document.createElement("img");
     projectThumb.src = "/src/imgs/" + project.thumb;
     projectThumb.alt = project.name;
-    projectThumb.className = "pt-4";
+    projectThumb.className = "mt-4 rounded-md";
 
     // Language tag
     let language = project.lang;
@@ -141,7 +144,7 @@ for (let i = 0; i < projects.length; i++) {
     if (language == "C++") {
         languageLower = "cpp"
     };
-
+ 
     let flexGrowTen = document.createElement("div");
     flexGrowTen.style = "margin: auto;";
 

@@ -19,7 +19,7 @@
 <body class="bg-dark-gray">
     <header id="header" class="flex justify-center">
         <div class="min-h-screen w-[90vw] flex items-center flex-col max-sm:text-center justify-center bg-dark-gray">
-            <div class="flex items-center flex-row max-sm:flex-col p-4">
+            <div id="headerProfile" class="w-[60vw] flex items-center justify-center flex-row max-sm:flex-col mb-4">
                 <!-- TEMPORARY PICTURE -->
                 <img src="/src/imgs/Aidan.png" alt="Picture" id="picture"
                 class="rounded-full aspect-square h-40 mr-8 max-sm:mr-0 drop-shadow-[0_0_0.5rem_#fa508c] grayscale
@@ -27,12 +27,12 @@
                 <!-- TEMPORARY PICTURE -->
                 <div class="opacity-0 transition-opacity ease-in delay-[800ms] duration-700" id="headerName">
                     <h1 class="text-green text-4xl mt-4 sm:mt-0">$aidan_carey</h1>
-                    <p class="">Third Year Computer Science Student at Acadia University</p>
+                    <p class="opacity-60">Third Year Computer Science Student at Acadia University</p>
                 </div>
             </div>
             
-            <div id="headerAbout" class="w-[90vw] lg:w-[50vw] my-4 bg-gray rounded-md p-4 mx-4 flex flex-col
-                                         opacity-0 transition-opacity ease-in delay-[1600ms] duration-700 drop-shadow-[0_0_0.5rem_#fa508c]">
+            <div id="headerAbout" class=" my-4 w-[60vw]
+                opacity-0 transition-opacity ease-in delay-[1600ms] duration-700">
                 <p>
                     Hello, I'm Aidan. I'm a third year computer science student at Acadia University and hobby programmer. I started writing
                     simple programs with Python when I was in grade 9 and I've had a passion for programming ever since.
@@ -42,6 +42,25 @@
                     and as a hobby I like to automate personal tasks and experiment with new technologies and concepts.
                 </p>
             </div>
+
+            <ul id="headerContact" class="mb-4 w-[80vw] flex items-center justify-center
+                                          opacity-0 transition-opacity ease-in delay-[1600ms] duration-700">
+                <li class="mx-1">
+                    <a target="_blank" id="email" class="text-yellow italic hover:drop-shadow-[0_0_0.5rem_#fa508c] transition-[drop_shadow] duration-150 ease-in-out">
+                        <img class="w-10" src="/src/imgs/icons/email.png" alt="email">
+                    </a>
+                </li>
+                <li class="mx-2">
+                    <a target="_blank" href="https://github.com/aidanc2004" class="text-yellow italic hover:drop-shadow-[0_0_0.5rem_#fa508c] transition-[drop_shadow] duration-150 ease-in-out">
+                        <img class="w-8" src="/src/imgs/icons/github-mark-white.svg" alt="GitHub">
+                    </a>
+                </li>
+                <li class="mx-2">
+                    <a target="_blank" href="https://www.linkedin.com/in/aidan-carey-aaa9b6217/" class="text-yellow italic hover:drop-shadow-[0_0_0.5rem_#fa508c] transition-[drop_shadow] duration-150 ease-in-out">
+                        <img class="w-8 grayscale" src="/src/imgs/icons/linkedin.png" alt="LinkedIn">
+                    </a>
+                </li>
+            </ul>
             
             <!-- TODO: Buggy when screen w is small -->
             <div id="headerScroll" class="absolute bottom-4 opacity-0 transition-opacity ease-in delay-[1600ms] duration-700">
@@ -69,36 +88,29 @@
         <h1 class="text-pink text-3xl pb-4">About</h1>
         
         <h2 class="text-purple text-2xl">Skills</h2>
-        <ul class="list-disc py-4 w-[80vw]">
+        <ul class="list-disc my-4 w-[80vw]">
             <li>Full stack web development using JavaScript, HTML, CSS/Tailwind/Bootstrap, Ruby, and more.</li>
             <li>Scripting using Python, Perl, Ruby, and Bash, for web scraping, working with APIs, configuration, etc.</li>
             <li>Systems and low level programming with C, C++, and Rust.</li>
             <li>Quick at picking up new programming languages, skills, and technologies.</li>
         </ul>
 
-        <h2 class="text-purple text-2xl">Interests</h2>
-        <ul class="list-disc py-4 w-[80vw]">
+        <h2 class="text-purple text-2xl">...</h2>
+        <ul class="list-disc my-4 w-[80vw]">
+            <li>...</li>
             <li>...</li>
         </ul>
 
-        <h2 class="text-purple text-2xl">Contact</h2>
-        
-        <ul class="pt-4 w-[80vw] flex items-center justify-center">
-            <li class="px-1">
-                <a target="_blank" id="email" class="text-yellow italic hover:drop-shadow-[0_0_0.5rem_#fa508c] transition-[drop_shadow] duration-150 ease-in-out">
-                    <img class="w-10" src="/src/imgs/icons/email.png" alt="email">
-                </a>
-            </li>
-            <li class="px-2">
-                <a target="_blank" href="https://github.com/aidanc2004" class="text-yellow italic hover:drop-shadow-[0_0_0.5rem_#fa508c] transition-[drop_shadow] duration-150 ease-in-out">
-                    <img class="w-8" src="/src/imgs/icons/github-mark-white.svg" alt="GitHub">
-                </a>
-            </li>
-            <li class="px-2">
-                <a target="_blank" href="https://www.linkedin.com/in/aidan-carey-aaa9b6217/" class="text-yellow italic hover:drop-shadow-[0_0_0.5rem_#fa508c] transition-[drop_shadow] duration-150 ease-in-out">
-                    <img class="w-8 grayscale" src="/src/imgs/icons/linkedin.png" alt="LinkedIn">
-                </a>
-            </li>
+        <h2 class="text-purple text-2xl">...</h2>
+        <ul class="list-disc my-4 w-[80vw]">
+            <li>...</li>
+            <li>...</li>
+        </ul>
+
+        <h2 class="text-purple text-2xl">...</h2>
+        <ul class="list-disc my-4 w-[80vw]">
+            <li>...</li>
+            <li>...</li>
         </ul>
     </div>
 
@@ -115,7 +127,7 @@
 
     <footer class="bg-gray p-4 text-center">
         <p class="text-xs pb-2 opacity-75">Built with HTML, Tailwind, JavaScript, and hosted with GitHub Pages.</p>
-        <p class="text-xs opacity-75">Color Scheme from my favourite VS Code theme: <a href="https://github.com/ftsamoyed/PinkCatBoo" target="_blank" class="text-yellow italic text-xs">Pink Cat Boo</a> by FionaFan.</p>
+        <p class="text-xs opacity-75">Color Scheme from VS Code theme <a href="https://github.com/ftsamoyed/PinkCatBoo" target="_blank" class="text-yellow italic text-xs">Pink Cat Boo</a> by FionaFan.</p>
     </footer>
 </body>
 </html>
