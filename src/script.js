@@ -20,11 +20,11 @@ const headerAbout = document.getElementById("headerAbout");
 closeDescription.addEventListener("click", toggleDescription)
 
 // Header ocpacity transitions on loading website
-headerImage.style.opacity = 1;
-headerName.style.opacity = 1;
-headerScroll.style.opacity = 1;
-headerAbout.style.opacity = 1;
-headerContact.style.opacity = 1;
+// headerImage.style.opacity = 1;
+// headerName.style.opacity = 1;
+// headerScroll.style.opacity = 1;
+// headerAbout.style.opacity = 1;
+// headerContact.style.opacity = 1;
 
 // Obscure email to hide from spam bots
 const email = document.getElementById("email");
@@ -35,6 +35,17 @@ email.href = emailParts.reverse().join('')
 const github = "https://github.com/aidanc2004/";
 
 let projects = [
+    {
+        "name": "Print Nova Scotia Fire Ban",
+        "shortDesc": "Python script for Windows to print out the current NS fire ban",
+        "thumb": "",
+        "description": `While working at Orchard Queen Motel and RV Park during the summer, we had to print out the current fire bans in Nova Scotia for the campers.
+            To make this easier, my manager, Matthew, asked me if I would be able to write a program that could automatically print out the page everyday at 2pm. Over
+            the span of a few days, I finished writing the script in Python.`,
+        "link": `${github}print-ns-fire-ban`,
+        "img": "",
+        "lang": "Python"
+    },
     {
         "name": "Shell",
         "shortDesc": "Very simple shell written in C.",
@@ -56,14 +67,14 @@ let projects = [
     },
     {
         "name": "acorn-downloader",
-        "shortDesc": "A web scraper to download resources from Acadia University's Moodle (Acorn) written in Python.",
-        "description": `I always make sure to download all of the course materials from all of my classes, which can help a lot if Acorn (Acadia's Moodle) is down,
-            I'm away from internet, or I want to look back at it after I finish the course, but it can be time consuming to scan through all of my courses for anything
-            that I've missed or haven't downloaded. To make this easier, I made a web scraper using Python with Mechanize to automatically login and download
-            all resources from all of my in-progress courses into seperate directories.`,
+        "shortDesc": "A web scraper to download resources from Acadia University's Moodle (Acorn) written in Perl.",
+        "description": `I always make sure to download all of the course materials from all of my classes, but it can be time consuming to scan through all of my
+            courses for anything that I've missed or haven't downloaded. To make this easier, I made a web scraper using Perl with WWW::Mechanize to automatically login
+            and download all resources from all of my in-progress courses into seperate directories. I decided to use Perl for this project because it's excellent at
+            text processing and using Regex`,
         "link": `${github}acorn-downloader`,
         "img": "Acorn-Downloader.png",
-        "lang": "Python"
+        "lang": "Perl"
     },
     {
         "name": "wheelock-perl",
@@ -118,8 +129,8 @@ for (let i = 0; i < projects.length; i++) {
 
     let projectDiv = document.createElement("div");
     projectDiv.className =
-        `border-2 bg-dark-gray border-gray rounded-lg m-2 p-4 hover:drop-shadow-[0_0_0.5rem_#fa508c]
-         cursor-pointer transition-[drop_shadow] duration-150 ease-in-out flex flex-col justify-around`;
+        `shadow-2xl rounded-lg m-2 p-4 hover:shadow-[0_0_0_0_#FFF5EE]
+         cursor-pointer transition-[box_shadow] duration-150 ease-in-out flex flex-col justify-around`;
 
     // Project Title
     let projectName = document.createElement("h2");
@@ -134,7 +145,7 @@ for (let i = 0; i < projects.length; i++) {
     if (project.thumb == undefined) project.thumb = project.img;
 
     let projectThumb = document.createElement("img");
-    projectThumb.src = "/src/imgs/" + project.thumb;
+    projectThumb.src = "/src/imgs/projects/" + project.thumb;
     projectThumb.alt = project.name;
     projectThumb.className = "mt-4 rounded-md";
 
@@ -188,7 +199,7 @@ for (let projectDiv of projectsGrid.children) {
         projectLink.href = link;
 
         if (img !== "") {
-            projectImg.src = `/src/imgs/${img}`;
+            projectImg.src = `/src/imgs/projects/${img}`;
         } else {
             projectImg.src = "";
         }
@@ -200,7 +211,7 @@ for (let projectDiv of projectsGrid.children) {
         }
 
         if (img2) {
-            projectImg2.src = `/src/imgs/${img2}`;
+            projectImg2.src = `/src/imgs/projects/${img2}`;
             // Scale down when there are multiple images
             projectImg.style.maxWidth = "50%"
         } else {
