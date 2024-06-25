@@ -7,6 +7,7 @@
 .swift-border { border-color: #ef4f37; }
 .cpp-border { border-color: #f24b7d; }
 .python-border { border-color: #306794; }
+.java-border { border-color: #af7018; }
 
 .perl-bg { background-color: #0198c1; }
 .c-bg { background-color: #545454; }
@@ -15,6 +16,7 @@
 .swift-bg { background-color: #ef4f37; }
 .cpp-bg { background-color: #f24b7d; }
 .python-bg { background-color: #306794; }
+.java-bg { background-color: #af7018; }
 
 .flex-shrink-10 {
     flex-shrink: 10;

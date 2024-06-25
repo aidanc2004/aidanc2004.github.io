@@ -1,11 +1,11 @@
 // Aidan Carey, 2023-2024
 
 // const header = document.getElementById("header");
-const headerImage = document.getElementById("picture");
-const headerName = document.getElementById("headerName");
-const headerProfile = document.getElementById("headerName");
-const headerScroll = document.getElementById("headerScroll");
-const headerContact = document.getElementById("headerContact");
+//const headerImage = document.getElementById("picture");
+//const headerName = document.getElementById("headerName");
+//const headerProfile = document.getElementById("headerName");
+//const headerScroll = document.getElementById("headerScroll");
+//const headerContact = document.getElementById("headerContact");
 const projectsGrid = document.getElementById("projectsGrid");
 const description = document.getElementById("description");
 const projectTitle = document.getElementById("projectTitle");
@@ -15,16 +15,12 @@ const projectImg = document.getElementById("projectImg");
 const projectImg2 = document.getElementById("projectImg2");
 const blur = document.getElementById("blur");
 const closeDescription = document.getElementById("closeDescription");
-const headerAbout = document.getElementById("headerAbout");
+//const headerAbout = document.getElementById("headerAbout");
 
 closeDescription.addEventListener("click", toggleDescription)
 
-// Header ocpacity transitions on loading website
+// Header opacity transitions on loading website
 // headerImage.style.opacity = 1;
-// headerName.style.opacity = 1;
-// headerScroll.style.opacity = 1;
-// headerAbout.style.opacity = 1;
-// headerContact.style.opacity = 1;
 
 // Obscure email to hide from spam bots
 const email = document.getElementById("email");
@@ -36,23 +32,38 @@ const github = "https://github.com/aidanc2004/";
 
 let projects = [
     {
-        "name": "Print Nova Scotia Fire Ban",
-        "shortDesc": "Python script for Windows to print out the current NS fire ban",
+        "name": "Student Information System (WIP)",
+        "shortDesc": "Full-stack student information system in Java, Spring Boot, Bootstrap, and more.",
         "thumb": "",
-        "description": `While working at Orchard Queen Motel and RV Park during the summer, we had to print out the current fire bans in Nova Scotia for the campers.
-            To make this easier, my manager, Matthew, asked me if I would be able to write a program that could automatically print out the page everyday at 2pm. Over
-            the span of a few days, I finished writing the script in Python.`,
+        "description": `Inspired by picking my courses at Acadia University, I decided to write my own student information system. For the tech stack I chose Java with
+            Spring Boot, Angular, Hibernate with PostgreSQL, and Bootstrap for CSS. Students can pick courses and manage their schedule, professors can add and remove students from
+            a course and assign themselves to their course, and admins can add and remove users and courses.`,
+        "link": `${github}student-information-system`,
+        "img": "",
+        "lang": "Java",
+        "not_ready": true
+    },
+    {
+        "name": "Blog (WIP)",
+        "shortDesc": "A simple blog written with Java and Spring Boot.",
+        "thumb": "",
+        "description": `A simple blogging website where a user can login to their account, create, edit, and delete blog posts. Created using Spring Boot, Thymeleaf,
+            and PostgreSQL.`,
+        "link": `${github}blog`,
+        "img": "",
+        "lang": "Java",
+        "not_ready": true
+    },
+    {
+        "name": "Print Nova Scotia Fire Ban",
+        "shortDesc": "Python script at Orchard Queen RV Park for Windows to automatically print out the current fire ban",
+        "thumb": "",
+        "description": `While working at Orchard Queen Motel and RV Park during the summer, we needed to print out the current fire ban for Annapolis County, Nova Scotia
+            for the campers. My manager, Matthew, asked me if I would be able to write a program that could automatically print out the page everyday at 2pm. I wrote the
+            script using Python with the win32 API.`,
         "link": `${github}print-ns-fire-ban`,
         "img": "",
         "lang": "Python"
-    },
-    {
-        "name": "Shell",
-        "shortDesc": "Very simple shell written in C.",
-        "description": `A very simple shell I wrote to get more familiar with C and low level programming.`,
-        "link": `${github}shell`,
-        "img": "Shell-WIP.png",
-        "lang": "C"
     },
     {
         "name": "Game of Life",
@@ -135,7 +146,11 @@ for (let i = 0; i < projects.length; i++) {
     // Project Title
     let projectName = document.createElement("h2");
     projectName.textContent = project.name;
-    projectName.className = "text-purple";
+    projectName.className = "text-coral font-normal";
+
+    if (project.not_ready) {
+        projectName.style = "color:red;font-style:italic;"
+    }
 
     // Thumbnail description
     let projectShortDesc = document.createElement("p");

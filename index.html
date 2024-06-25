@@ -17,63 +17,14 @@
     <title>Aidan Carey</title>
 </head>
 <body class="bg-seashell">
-  <!-- <header id="header" class="flex justify-center">
-      <div class="min-h-screen w-[90vw] flex items-center flex-col max-sm:text-center justify-center bg-dark-gray">
-          <div id="headerProfile" class="w-[60vw] flex items-center justify-center flex-row max-sm:flex-col mb-4">
-              <img src="/src/imgs/Aidan.png" alt="Picture" id="picture"
-              class="rounded-full aspect-square h-40 mr-8 max-sm:mr-0 drop-shadow-[0_0_0.5rem_#fa508c] grayscale
-                      opacity-0 transition-opacity ease-in delay-100 duration-700">
-              <div class="opacity-0 transition-opacity ease-in delay-[800ms] duration-700" id="headerName">
-                  <h1 class="text-green text-4xl mt-4 sm:mt-0">$aidan_carey</h1>
-                  <p class="opacity-60">Third Year Computer Science Student at Acadia University</p>
-              </div>
-          </div>
-          
-          <div id="headerAbout" class=" my-4 w-[60vw]
-              opacity-0 transition-opacity ease-in delay-[1600ms] duration-700">
-              <p>
-                  Hello, I'm Aidan. I'm a third year computer science student at Acadia University and hobby programmer. I started writing
-                  simple programs with Python when I was in grade 9 and I've had a passion for programming ever since.
-              </p>
-              <p class="mt-2">
-                  I have experience in multiple fields of programming from low level programming to web and mobile app development,
-                  and as a hobby I like to automate personal tasks and experiment with new technologies and concepts.
-              </p>
-          </div>
-
-          <ul id="headerContact" class="mb-4 w-[80vw] flex items-center justify-center
-                                        opacity-0 transition-opacity ease-in delay-[1600ms] duration-700">
-              <li class="mx-1">
-                  <a target="_blank" id="email" class="text-yellow italic hover:drop-shadow-[0_0_0.5rem_#fa508c] transition-[drop_shadow] duration-150 ease-in-out">
-                      <img class="w-10" src="/src/imgs/icons/email.png" alt="email">
-                  </a>
-              </li>
-              <li class="mx-2">
-                  <a target="_blank" href="https://github.com/aidanc2004" class="text-yellow italic hover:drop-shadow-[0_0_0.5rem_#fa508c] transition-[drop_shadow] duration-150 ease-in-out">
-                      <img class="w-8" src="/src/imgs/icons/github-mark-white.svg" alt="GitHub">
-                  </a>
-              </li>
-              <li class="mx-2">
-                  <a target="_blank" href="https://www.linkedin.com/in/aidan-carey-aaa9b6217/" class="text-yellow italic hover:drop-shadow-[0_0_0.5rem_#fa508c] transition-[drop_shadow] duration-150 ease-in-out">
-                      <img class="w-8 grayscale" src="/src/imgs/icons/linkedin.png" alt="LinkedIn">
-                  </a>
-              </li>
-          </ul>
-          
-          <div id="headerScroll" class="absolute bottom-4 opacity-0 transition-opacity ease-in delay-[1600ms] duration-700">
-              <a href="#about" class="opacity-50 px-2 rounded-full hover:opacity-80 hover:drop-shadow-[0_0_0.5rem_#fa508c] transition-[drop_shadow] ease-in-out duration-300">V</a>
-          </div>
-      </div>
-  </header> -->
-
-  <header class="h-[100vh] flex">
+  <header class="min-h-[100vh] flex md:flex-row flex-col">
     <!-- Left Content (Name, picture, description, contact) -->
-    <div class="bg-coral w-[45vw] flex flex-col align-middle justify-center">
+    <div class="bg-coral md:w-[45vw] w-[100vw] flex flex-col align-middle justify-center">
       <!-- Photo -->
-      <div class="flex items-center mx-4">
+      <div class="flex items-center m-4">
         <img src="/src/imgs/Aidan.png" alt="Aidan" class="rounded-full aspect-square h-40">
         <div class="ml-4">
-          <h1 class="text-3xl">$aidan_carey</h1>
+          <h1 class="text-3xl font-normal">$aidan_carey</h1>
           <p class="opacity-60 text-xl">Third Year Computer Science Student and Programming Hobbyist at Acadia University</p>
           <!-- Contact -->
           <ul class="flex items-center">
@@ -91,12 +42,12 @@
       </div>
     </div>
     <!-- Right Content (about) -->
-    <div class="w-[55vw] flex flex-col align-middle justify-center shadow-inner">
+    <div class="md:w-[55vw] w-[100vw] flex flex-col align-middle justify-center shadow-inner">
       <div class="ml-6 m-4">
         <p>
           Hello, I'm Aidan. I'm a third year computer science student at Acadia University and hobby programmer. I started writing
-          simple programs with Python when I was in grade 9 and I've had a passion for programming ever since.
-        </p>
+        simple programs since at least grade 9 with Python and I've had a passion for programming ever since.
+          </p>
         <p class="mt-4">
           I have experience in multiple fields of programming from low level programming to web and mobile app development,
           and as a hobby I like to automate personal tasks and experiment with new technologies and concepts.
@@ -109,7 +60,7 @@
   <div id="blur" class="backdrop-blur-md flex opacity-0 fixed top-0 left-0 w-screen h-screen z-10 justify-center items-center invisible transition-opacity ease-in-out duration-300">
     <div id="description" class="bg-seashell border-dark-gray p-4 shadow-2xl rounded-lg w-[50vw] h-[80vh] max-sm:w-[90vw] max-sm:h-[90vh] overflow-scroll">
       <button id="closeDescription" class="float-right text-purple py-0 px-2 rounded-lg hover:text-coral transition-color duration-150">x</button>
-      <h1 id="projectTitle" class="text-coral text-2xl pb-1"></h1>
+      <h1 id="projectTitle" class="text-coral text-2xl font-normal pb-1"></h1>
       <a target="_blank" id="projectLink" class="text-link italic">Link</a>
       <p id="projectDescription"></p>
       <div class="flex">
@@ -120,44 +71,42 @@
   </div>
   
   <!-- Information about myself -->
-  <div id="about" class="p-4 flex flex-col items-center justify-center border-2">
-      <h1 class="text-coral text-3xl pb-4">About</h1>
-      
-      <h2 class="text-2xl">Skills</h2>
-      <ul class="list-disc my-4 w-[80vw]">
-          <li>Full stack web development using JavaScript, HTML, CSS/Tailwind/Bootstrap, Ruby, and more.</li>
-          <li>Scripting using Python, Perl, Ruby, and Bash, for web scraping, working with APIs, configuration, etc.</li>
-          <li>Systems and low level programming with C, C++, and Rust.</li>
-          <li>Quick at picking up new programming languages, skills, and technologies.</li>
-      </ul>
+  <div id="about" class="bg-tiffany-blue min-h-[75vh] p-4 flex flex-col items-center justify-center">
+    <h2 class="text-2xl font-normal">Skills</h2>
+    <ul class="list-disc my-4 w-[80vw]">
+      <li>Full stack web development using JavaScript, Java, Ruby, and more.</li>
+      <li>Scripting using Python, Perl, Ruby, and Bash, for web scraping, APIs, etc.</li>
+      <li>Systems and low level programming with C, C++, and Rust.</li>
+      <li>Quick at picking up new programming languages, skills, and technologies.</li>
+    </ul>
 
-      <h2 class="text-2xl">...</h2>
-      <ul class="list-disc my-4 w-[80vw]">
-          <li>...</li>
-          <li>...</li>
-      </ul>
+    <h2 class="text-2xl font-normal">Hobbies and Interests</h2>
+    <ul class="list-disc my-4 w-[80vw]">
+      <li>Functional Programming</li>
+      <li>...</li>
+    </ul>
 
-      <h2 class="text-2xl">...</h2>
-      <ul class="list-disc my-4 w-[80vw]">
-          <li>...</li>
-          <li>...</li>
-      </ul>
+    <h2 class="text-2xl font-normal">Other</h2>
+    <ul class="list-disc my-4 w-[80vw]">
+      <li>...</li>
+      <li>...</li>
+    </ul>
   </div>
 
   <!-- List of previous and current projects -->
   <div id="projects" class="p-4 flex flex-col items-center">
-      <h1 class="text-coral text-3xl">Highlighted Projects</h1>
-      <p class="py-4">
-          Click for more information. From latest to oldest. More at my
-          <a target="_blank" href="https://www.linkedin.com/in/aidan-carey-aaa9b6217/" class="text-link italic">GitHub</a>
-      </p>
+    <h1 class="text-coral font-normal text-3xl">Highlighted Projects</h1>
+    <!-- TODO: Add language selector -->
+    <p class="py-4">
+      Click for more information. View more at my
+      <a target="_blank" href="https://github.com/aidanc2004/" class="text-link italic">GitHub</a>
+    </p>
 
-      <div id="projectsGrid" class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-[90vw]"></div>
+    <div id="projectsGrid" class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 w-[90vw]"></div>
   </div>
 
   <footer class="bg-gray p-4 text-center">
-      <p class="text-xs pb-2 opacity-75">Built with HTML, Tailwind, JavaScript, and hosted with GitHub Pages.</p>
-      <!-- <p class="text-xs opacity-75">Color Scheme from VS Code theme <a href="https://github.com/ftsamoyed/PinkCatBoo" target="_blank" class="text-yellow italic text-xs">Pink Cat Boo</a> by FionaFan.</p> -->
+    <p class="text-xs pb-2 opacity-75">Built with HTML, Tailwind, JavaScript, and hosted with GitHub Pages.</p>
   </footer>
 </body>
 </html>
