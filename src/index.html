@@ -18,10 +18,10 @@
 </head>
 <body class="bg-seashell">
   <header class="flex md:flex-row flex-col">
-    <!-- Left Content (Name, picture, description, contact) -->
+    <!-- Left Content (Profile) -->
     <div class="md:sticky static bg-coral h-[100vh] md:w-[45vw] w-[100vw] flex flex-col align-middle justify-center top-0">
       <!-- Photo -->
-      <div class="flex items-center m-4">
+      <div class="flex xl:flex-row flex-col items-center m-4">
         <img src="/src/imgs/Aidan.png" alt="Aidan" class="rounded-full aspect-square h-40">
         <div class="ml-4">
           <h1 class="text-3xl font-normal">$aidan_carey</h1>
@@ -41,16 +41,17 @@
         </div>
       </div>
     </div>
-    <!-- Right Content (about) -->
+    <!-- Right Content (About, skills, etc) -->
     <div class="md:w-[55vw]">
       <div class="ml-6 m-4 min-h-[100vh] flex flex-col align-middle justify-center">
+        <h2 class="font-normal">Hello,</h2>
+        <p class="my-4">
+          I'm Aidan. I'm a third year computer science student at Acadia University and hobby programmer. I started writing
+          simple programs since grade 9 using Python and I've had a passion for programming ever since.
+        </p>
         <p>
-          Hello, I'm Aidan. I'm a third year computer science student at Acadia University and hobby programmer. I started writing
-        simple programs since at least grade 9 with Python and I've had a passion for programming ever since.
-          </p>
-        <p class="mt-4">
           I have experience in multiple fields of programming from low level programming to web and mobile app development,
-          and as a hobby I like to automate personal tasks and experiment with new technologies and concepts.
+          as a hobby I like to automate personal tasks and experiment with new technologies and concepts.
         </p>
       </div>
       <!-- Information about myself -->
@@ -58,7 +59,7 @@
         <h2 class="text-2xl font-normal">Skills</h2>
         <ul class="list-disc my-4 md:w-[45vw]">
           <li>Full stack web development using JavaScript, Java, Ruby, and more.</li>
-          <li>Scripting using Python, Perl, Ruby, and Bash, for web scraping, APIs, etc.</li>
+          <li>Scripting using Python, Perl, Bash, and more, for web scraping, using APIs, etc.</li>
           <li>Systems and low level programming with C, C++, and Rust.</li>
           <li>Quick at picking up new programming languages, skills, and technologies.</li>
         </ul>
@@ -78,9 +79,9 @@
     </div>
   </header>
 
-  <!-- Where the project's description will be once clicked -->
+  <!-- Project description popup -->
   <div id="blur" class="backdrop-blur-md flex opacity-0 fixed top-0 left-0 w-screen h-screen z-10 justify-center items-center invisible transition-opacity ease-in-out duration-300">
-    <div id="description" class="bg-seashell border-dark-gray p-4 shadow-2xl rounded-lg w-[50vw] h-[80vh] max-sm:w-[90vw] max-sm:h-[90vh] overflow-scroll">
+    <div id="description" class="bg-seashell border-dark-gray p-4 shadow-2xl rounded-lg w-[60vw] h-[80vh] max-sm:w-[90vw] max-sm:h-[90vh] overflow-scroll">
       <button id="closeDescription" class="float-right text-purple py-0 px-2 rounded-lg hover:text-coral transition-color duration-150">x</button>
       <h1 id="projectTitle" class="text-coral text-2xl font-normal pb-1"></h1>
       <a target="_blank" id="projectLink" class="text-link italic">Link</a>
@@ -91,18 +92,16 @@
       </div>
     </div>
   </div>
-  
-  
 
   <!-- List of previous and current projects -->
   <div id="projects" class="p-4 flex flex-col items-center">
     <h1 class="text-coral font-normal text-3xl">Highlighted Projects</h1>
     <!-- TODO: Add language selector -->
     <p class="py-4">
-      Click for more information. View more at my
+      Click for more information. More at my
       <a target="_blank" href="https://github.com/aidanc2004/" class="text-link italic">GitHub</a>
     </p>
-
+    <!-- Grid of projects -->
     <div id="projectsGrid" class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 w-[90vw]"></div>
   </div>
 
