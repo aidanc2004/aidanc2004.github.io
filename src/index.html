@@ -17,9 +17,9 @@
     <title>Aidan Carey</title>
 </head>
 <body class="bg-seashell">
-  <header class="min-h-[100vh] flex md:flex-row flex-col">
+  <header class="flex md:flex-row flex-col">
     <!-- Left Content (Name, picture, description, contact) -->
-    <div class="bg-coral md:w-[45vw] w-[100vw] flex flex-col align-middle justify-center">
+    <div class="md:sticky static bg-coral h-[100vh] md:w-[45vw] w-[100vw] flex flex-col align-middle justify-center top-0">
       <!-- Photo -->
       <div class="flex items-center m-4">
         <img src="/src/imgs/Aidan.png" alt="Aidan" class="rounded-full aspect-square h-40">
@@ -42,8 +42,8 @@
       </div>
     </div>
     <!-- Right Content (about) -->
-    <div class="md:w-[55vw] w-[100vw] flex flex-col align-middle justify-center shadow-inner">
-      <div class="ml-6 m-4">
+    <div class="md:w-[55vw]">
+      <div class="ml-6 m-4 min-h-[100vh] flex flex-col align-middle justify-center">
         <p>
           Hello, I'm Aidan. I'm a third year computer science student at Acadia University and hobby programmer. I started writing
         simple programs since at least grade 9 with Python and I've had a passion for programming ever since.
@@ -52,6 +52,28 @@
           I have experience in multiple fields of programming from low level programming to web and mobile app development,
           and as a hobby I like to automate personal tasks and experiment with new technologies and concepts.
         </p>
+      </div>
+      <!-- Information about myself -->
+      <div id="about" class="min-h-[75vh] md:w-[55vw] bg-tiffany-blue p-4 flex flex-col items-center justify-center">
+        <h2 class="text-2xl font-normal">Skills</h2>
+        <ul class="list-disc my-4 md:w-[45vw]">
+          <li>Full stack web development using JavaScript, Java, Ruby, and more.</li>
+          <li>Scripting using Python, Perl, Ruby, and Bash, for web scraping, APIs, etc.</li>
+          <li>Systems and low level programming with C, C++, and Rust.</li>
+          <li>Quick at picking up new programming languages, skills, and technologies.</li>
+        </ul>
+
+        <h2 class="text-2xl font-normal">Hobbies and Interests</h2>
+        <ul class="list-disc my-4 md:w-[45vw]">
+          <li>Functional Programming</li>
+          <li>...</li>
+        </ul>
+
+        <h2 class="text-2xl font-normal">Other</h2>
+        <ul class="list-disc my-4 md:w-[45vw]">
+          <li>...</li>
+          <li>...</li>
+        </ul>
       </div>
     </div>
   </header>
@@ -70,28 +92,7 @@
     </div>
   </div>
   
-  <!-- Information about myself -->
-  <div id="about" class="bg-tiffany-blue min-h-[75vh] p-4 flex flex-col items-center justify-center">
-    <h2 class="text-2xl font-normal">Skills</h2>
-    <ul class="list-disc my-4 w-[80vw]">
-      <li>Full stack web development using JavaScript, Java, Ruby, and more.</li>
-      <li>Scripting using Python, Perl, Ruby, and Bash, for web scraping, APIs, etc.</li>
-      <li>Systems and low level programming with C, C++, and Rust.</li>
-      <li>Quick at picking up new programming languages, skills, and technologies.</li>
-    </ul>
-
-    <h2 class="text-2xl font-normal">Hobbies and Interests</h2>
-    <ul class="list-disc my-4 w-[80vw]">
-      <li>Functional Programming</li>
-      <li>...</li>
-    </ul>
-
-    <h2 class="text-2xl font-normal">Other</h2>
-    <ul class="list-disc my-4 w-[80vw]">
-      <li>...</li>
-      <li>...</li>
-    </ul>
-  </div>
+  
 
   <!-- List of previous and current projects -->
   <div id="projects" class="p-4 flex flex-col items-center">

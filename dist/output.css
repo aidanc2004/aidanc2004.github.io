@@ -556,16 +556,16 @@ video {
   visibility: hidden;
 }
 
+.static {
+  position: static;
+}
+
 .fixed {
   position: fixed;
 }
 
-.absolute {
-  position: absolute;
-}
-
-.relative {
-  position: relative;
+.sticky {
+  position: sticky;
 }
 
 .left-0 {
@@ -574,10 +574,6 @@ video {
 
 .top-0 {
   top: 0px;
-}
-
-.right-0 {
-  right: 0px;
 }
 
 .z-10 {
@@ -599,6 +595,11 @@ video {
 .my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.mx-16 {
+  margin-left: 4rem;
+  margin-right: 4rem;
 }
 
 .ml-1 {
@@ -627,6 +628,18 @@ video {
 
 .mt-4 {
   margin-top: 1rem;
+}
+
+.ml-8 {
+  margin-left: 2rem;
+}
+
+.ml-12 {
+  margin-left: 3rem;
+}
+
+.ml-16 {
+  margin-left: 4rem;
 }
 
 .block {
@@ -661,12 +674,28 @@ video {
   height: 10rem;
 }
 
+.h-\[100vh\] {
+  height: 100vh;
+}
+
 .h-\[80vh\] {
   height: 80vh;
 }
 
 .h-screen {
   height: 100vh;
+}
+
+.h-\[10rem\] {
+  height: 10rem;
+}
+
+.h-\[20rem\] {
+  height: 20rem;
+}
+
+.h-\[200vh\] {
+  height: 200vh;
 }
 
 .min-h-\[100vh\] {
@@ -736,6 +765,10 @@ video {
 
 .flex-col {
   flex-direction: column;
+}
+
+.items-start {
+  align-items: flex-start;
 }
 
 .items-center {
@@ -967,12 +1000,28 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:static {
+    position: static;
+  }
+
+  .md\:sticky {
+    position: sticky;
+  }
+
   .md\:w-\[45vw\] {
     width: 45vw;
   }
 
   .md\:w-\[55vw\] {
     width: 55vw;
+  }
+
+  .md\:w-\[40vw\] {
+    width: 40vw;
+  }
+
+  .md\:w-\[50vw\] {
+    width: 50vw;
   }
 
   .md\:grid-cols-2 {
