@@ -18,4 +18,12 @@
     *::-webkit-scrollbar {
         display: none;
     }
+
+    /*.flex-shrink-10 {
+        flex-shrink: 10;
+    }
+    
+    .flex-grow-10 {
+        flex-shrink: 10;
+    }*/
 }

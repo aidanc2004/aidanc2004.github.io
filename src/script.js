@@ -106,7 +106,7 @@ let projects = [
         "link": "/src/graphing-calculator",
         "linkName": "Page",
         "img": "Graphing-Calculator.png",
-        "lang": "JS"
+        "lang": "JavaScript"
     },
     {
         "name": "C++ Sorting Visualizations",
@@ -160,7 +160,7 @@ for (let i = 0; i < projects.length; i++) {
     let language = project.lang;
     let languageLower = language.toLowerCase();
     if (language == "C++") {
-        languageLower = "cpp"
+       languageLower = "cpp"
     };
  
     // Add space after the image to push the language tag to the bottom
