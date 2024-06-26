@@ -163,6 +163,10 @@ for (let i = 0; i < projects.length; i++) {
        languageLower = "cpp"
     };
  
+    // TODO: Add a tag for the specfic technology
+    // Spring Boot, Rails, PostgreSQL, Tailwind CSS, SFML, etc.
+    // in the format of "<Logo> Technology"
+
     // Add space after the image to push the language tag to the bottom
     let flexGrowTen = document.createElement("div");
     flexGrowTen.style = "margin: auto;";
