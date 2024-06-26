@@ -7,7 +7,7 @@
 @layer base {
     * {
         color: #000;
-        font-size: 1.40rem;
+        font-size: 1.30rem;
         font-family: 'Roboto', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'Arial', 'sans-serif';
         font-weight: 300;
         scroll-behavior: smooth;

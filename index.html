@@ -24,7 +24,7 @@
       <div class="flex xl:flex-row flex-col items-center m-4">
         <img src="/src/imgs/Aidan.png" alt="Aidan" class="rounded-full aspect-square h-40">
         <div class="ml-4">
-          <h1 class="text-3xl font-normal">$aidan_carey</h1>
+          <h1 class="text-3xl font-normal">&lambda; aidan carey</h1>
           <p class="opacity-60 text-xl">Third Year Computer Science Student and Programming Hobbyist at Acadia University</p>
           <!-- Contact -->
           <ul class="flex items-center">
@@ -64,9 +64,9 @@
           <li>Quick at picking up new programming languages, skills, and technologies.</li>
         </ul>
 
-        <h2 class="text-2xl font-normal">Hobbies and Interests</h2>
+        <h2 class="text-2xl font-normal">Hobbies</h2>
         <ul class="list-disc my-4 md:w-[45vw]">
-          <li>Functional Programming</li>
+          <li>Functional Programming with Haskell</li>
           <li>...</li>
         </ul>
 
@@ -78,20 +78,6 @@
       </div>
     </div>
   </header>
-
-  <!-- Project description popup -->
-  <div id="blur" class="backdrop-blur-md flex opacity-0 fixed top-0 left-0 w-screen h-screen z-10 justify-center items-center invisible transition-opacity ease-in-out duration-300">
-    <div id="description" class="bg-seashell border-dark-gray p-4 shadow-2xl rounded-lg w-[60vw] h-[80vh] max-sm:w-[90vw] max-sm:h-[90vh] overflow-scroll">
-      <button id="closeDescription" class="float-right text-purple py-0 px-2 rounded-lg hover:text-coral transition-color duration-150">x</button>
-      <h1 id="projectTitle" class="text-coral text-2xl font-normal pb-1"></h1>
-      <a target="_blank" id="projectLink" class="text-link italic">Link</a>
-      <p id="projectDescription"></p>
-      <div class="flex">
-        <img id="projectImg" class="pt-4 max-w-[100%] object-contain" />
-        <img id="projectImg2" class="pt-4 max-w-[50%] object-contain" />
-      </div>
-    </div>
-  </div>
 
   <!-- List of previous and current projects -->
   <div id="projects" class="p-4 flex flex-col items-center">
@@ -108,5 +94,19 @@
   <footer class="bg-gray p-4 text-center">
     <p class="text-xs pb-2 opacity-75">Built with HTML, Tailwind, JavaScript, and hosted with GitHub Pages.</p>
   </footer>
+
+  <!-- Project description popup -->
+  <div id="blur" class="backdrop-blur-md flex opacity-0 fixed top-0 left-0 w-screen h-screen z-10 justify-center items-center invisible transition-opacity ease-in-out duration-300">
+    <div id="description" class="bg-seashell border-dark-gray p-4 shadow-2xl rounded-lg w-[60vw] h-[90vh] max-sm:w-[90vw] max-sm:h-[75vh] overflow-scroll">
+      <button id="closeDescription" class="float-right text-purple py-0 px-2 rounded-lg hover:text-coral transition-color duration-150">x</button>
+      <h1 id="projectTitle" class="text-coral text-2xl font-normal pb-1"></h1>
+      <a target="_blank" id="projectLink" class="text-link italic">Link</a>
+      <p id="projectDescription"></p>
+      <div class="flex">
+        <img id="projectImg" class="pt-4 max-w-[100%] object-contain" />
+        <img id="projectImg2" class="pt-4 max-w-[50%] object-contain" />
+      </div>
+    </div>
+  </div>
 </body>
 </html>

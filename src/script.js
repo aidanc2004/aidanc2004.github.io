@@ -1,11 +1,5 @@
 // Aidan Carey, 2023-2024
 
-// const header = document.getElementById("header");
-//const headerImage = document.getElementById("picture");
-//const headerName = document.getElementById("headerName");
-//const headerProfile = document.getElementById("headerName");
-//const headerScroll = document.getElementById("headerScroll");
-//const headerContact = document.getElementById("headerContact");
 const projectsGrid = document.getElementById("projectsGrid");
 const description = document.getElementById("description");
 const projectTitle = document.getElementById("projectTitle");
@@ -15,7 +9,6 @@ const projectImg = document.getElementById("projectImg");
 const projectImg2 = document.getElementById("projectImg2");
 const blur = document.getElementById("blur");
 const closeDescription = document.getElementById("closeDescription");
-//const headerAbout = document.getElementById("headerAbout");
 
 closeDescription.addEventListener("click", toggleDescription)
 
@@ -88,15 +81,6 @@ let projects = [
         "lang": "Perl"
     },
     {
-        "name": "wheelock-perl",
-        "shortDesc": "A command-line frontend for Acadia University's Wheelock Hall written in Perl.",
-        "description": `I spend a lot of time working in the terminal, so I decided to quickly reimplement my Swift frontend for Acadia University's dining hall as
-        a command line app using Perl. You can choose a period to view (breakfast, lunch, dinner), view the menu at a specific date, and filter by categories.`,
-        "link": `${github}wheelock-perl`,
-        "img": "Wheelock-Perl.png",
-        "lang": "Perl"
-    },
-    {
         "name": "Campground Reservation Website",
         "shortDesc": "A Ruby on Rails web application where customers can book reservations for a campsite.",
         "description": "While working at Jeff's Hideaway campground as a summer job, I worked a lot with their campground reservation software,\n        Campground Master, and their website made using Wordpress. I noticed how these two programs worked with different databases, meaning that once\n        someone booked a site we would have to copy it over to the other program. This inspired me to create my own reservation software.",
@@ -134,22 +118,25 @@ let projects = [
     }
 ];
 
-// Generate project thumbnails from array of objects
+// Generate project thumbnails from the array of projects
 for (let i = 0; i < projects.length; i++) {
     let project = projects[i];
 
-    let projectDiv = document.createElement("div");
-    projectDiv.className =
+    const divTailwind =
         `shadow-2xl rounded-lg m-2 p-4 hover:shadow-[0_0_0_0_#FFF5EE]
-         cursor-pointer transition-[box_shadow] duration-150 ease-in-out flex flex-col justify-around`;
+        cursor-pointer transition-[box_shadow] duration-150 ease-in-out flex flex-col justify-around`;
+
+    let projectDiv = document.createElement("div");
+    projectDiv.className = divTailwind;
 
     // Project Title
     let projectName = document.createElement("h2");
     projectName.textContent = project.name;
     projectName.className = "text-coral font-normal";
 
+    // If the project is still work in progress, show the title in red italics
     if (project.not_ready) {
-        projectName.style = "color:red;font-style:italic;"
+        projectName.style = "color:red; font-style:italic;"
     }
 
     // Thumbnail description
@@ -159,10 +146,15 @@ for (let i = 0; i < projects.length; i++) {
     // If it doesn't have a thumbnail then use the regular image
     if (project.thumb == undefined) project.thumb = project.img;
 
+    let projectThumbContainer = document.createElement("div");
+    projectThumbContainer.className = "flex justify-center align-center";
+
     let projectThumb = document.createElement("img");
     projectThumb.src = "/src/imgs/projects/" + project.thumb;
     projectThumb.alt = project.name;
-    projectThumb.className = "mt-4 rounded-md";
+    projectThumb.className = "mt-4 rounded-md w-[80%]";
+
+    projectThumbContainer.appendChild(projectThumb);
 
     // Language tag
     let language = project.lang;
@@ -171,12 +163,14 @@ for (let i = 0; i < projects.length; i++) {
         languageLower = "cpp"
     };
  
+    // Add space after the image to push the language tag to the bottom
     let flexGrowTen = document.createElement("div");
     flexGrowTen.style = "margin: auto;";
 
+    // Create a GitHub-like language tag for the project
     let languageTagDiv = document.createElement("div");
     languageTagDiv.className = `flex w-fit mt-2 px-2 items-center rounded-full border-2 ${languageLower}-border`;
-
+    
     let languageTagDot = document.createElement("div");
     languageTagDot.className = `h-2 w-2 ${languageLower}-bg rounded-full mr-1 inline-block`;
 
@@ -189,14 +183,14 @@ for (let i = 0; i < projects.length; i++) {
 
     projectDiv.appendChild(projectName);
     projectDiv.appendChild(projectShortDesc);
-    projectDiv.appendChild(projectThumb);
+    projectDiv.appendChild(projectThumbContainer);
     projectDiv.appendChild(flexGrowTen);
     projectDiv.appendChild(languageTagDiv)
 
     projectsGrid.appendChild(projectDiv);
 }
 
-// Make all of the projects clickable
+// For each project, create the description popup on click
 for (let projectDiv of projectsGrid.children) {
     projectDiv.addEventListener("click", () => {
         projectTitle.textContent = projectDiv.children[0].textContent;
@@ -213,18 +207,14 @@ for (let projectDiv of projectsGrid.children) {
         projectDescription.textContent = description;
         projectLink.href = link;
 
+        // Set the img src if a filepath exists
         if (img !== "") {
             projectImg.src = `/src/imgs/projects/${img}`;
         } else {
             projectImg.src = "";
         }
 
-        if (linkName) {
-            projectLink.textContent = linkName;
-        } else {
-            projectLink.textContent = "GitHub";
-        }
-
+        // If theres a second image, show both at half width
         if (img2) {
             projectImg2.src = `/src/imgs/projects/${img2}`;
             // Scale down when there are multiple images
@@ -234,26 +224,39 @@ for (let projectDiv of projectsGrid.children) {
             projectImg.style.maxWidth = "100%"
         }
 
+        // Change the link text if it's not GitHub
+        if (linkName) {
+            projectLink.textContent = linkName;
+        } else {
+            projectLink.textContent = "GitHub";
+        }
+
+        // Show description popup
         toggleDescription();
     });
 }
 
-// Toggle blur when clicking away from description
+// Toggle main content blur when clicking away from description
 blur.addEventListener("click", event => {
     // Only toggle if you click the blurred area
-    if (event.target === blur)
-        toggleDescription();
+    if (event.target === blur) toggleDescription();
 })
 
-// "block" <=> "hidden"
+// Toggle the description popup. "visible" <=> "hidden"
 function toggleDescription() {
     const visible = blur.style.visibility;
 
+    // Show
     if (visible !== "visible") {
+        // Reset popup scroll
+        description.scroll({top: 0, behavior: "instant"});
+
         blur.style.opacity = 1;
         blur.style.visibility = "visible";
 
+        // Disable scrolling the main content
         disableScrolling();
+    // Hide
     } else {
         blur.style.opacity = 0;
 
@@ -262,15 +265,18 @@ function toggleDescription() {
             blur.style.visibility = "hidden";
         }, 300);
 
+        // Enable scrolling the main content
         enableScrolling();
     }
 }
 
+// Disable scrolling the main content
 function disableScrolling () {
     document.body.style.overflow = "hidden";
     document.body.style.userSelect = "none";
 }
 
+// Enable scrolling the main content
 function enableScrolling () {
     document.body.style.overflow = "auto";
     document.body.style.userSelect = "auto";
