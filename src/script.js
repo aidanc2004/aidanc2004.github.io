@@ -132,11 +132,11 @@ for (let i = 0; i < projects.length; i++) {
     // Project Title
     let projectName = document.createElement("h2");
     projectName.textContent = project.name;
-    projectName.className = "text-coral font-normal";
+    projectName.className = "text-lapis font-normal"; // coral
 
     // If the project is still work in progress, show the title in red italics
     if (project.not_ready) {
-        projectName.style = "color:red; font-style:italic;"
+        projectName.style = "color: red; font-style: italic;";
     }
 
     // Thumbnail description
@@ -277,11 +277,9 @@ function toggleDescription() {
 // Disable scrolling the main content
 function disableScrolling () {
     document.body.style.overflow = "hidden";
-    document.body.style.userSelect = "none";
 }
 
 // Enable scrolling the main content
 function enableScrolling () {
     document.body.style.overflow = "auto";
-    document.body.style.userSelect = "auto";
 }

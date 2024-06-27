@@ -12,20 +12,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="/src/language-colors.css">
-    <link rel="stylesheet" href="/src/output.css">
+    <link rel="stylesheet" href="/dist/output.css">
     <script src="/src/script.js" defer></script>
     <title>Aidan Carey</title>
 </head>
 <body class="bg-seashell">
   <header class="flex md:flex-row flex-col">
     <!-- Left Content (Profile) -->
-    <div class="md:sticky static bg-coral h-[100vh] md:w-[45vw] w-[100vw] flex flex-col align-middle justify-center top-0">
+    <div class="md:sticky static bg-lapis h-[100vh] md:w-[45vw] w-[100vw] flex flex-col align-middle justify-center top-0 ring-inset ring">
       <!-- Photo -->
       <div class="flex xl:flex-row flex-col items-center m-4">
         <img src="/src/imgs/Aidan.png" alt="Aidan" class="rounded-full aspect-square h-40">
         <div class="ml-4">
-          <h1 class="text-3xl font-normal">&lambda; aidan carey</h1>
-          <p class="opacity-60 text-xl">Third Year Computer Science Student and Programming Hobbyist at Acadia University</p>
+          <h1 class="text-3xl font-normal text-seashell">&lambda; aidan carey</h1>
+          <p class="opacity-80 text-xl text-seashell">Third Year Computer Science Student and Programming Hobbyist at Acadia University</p>
           <!-- Contact -->
           <ul class="flex items-center">
             <li>
@@ -43,9 +43,9 @@
     </div>
     <!-- Right Content (About, skills, etc) -->
     <div class="md:w-[55vw]">
-      <div class="ml-6 m-4 min-h-[100vh] flex flex-col align-middle justify-center">
+      <div class="mx-6 min-h-[100vh] flex flex-col align-middle justify-center">
         <h2 class="font-normal">Hello,</h2>
-        <p class="my-4">
+        <p class="my-6">
           I'm Aidan. I'm a third year computer science student at Acadia University and hobby programmer. I started writing
           simple programs since grade 9 using Python and I've had a passion for programming ever since.
         </p>
@@ -55,8 +55,9 @@
         </p>
       </div>
       <!-- Information about myself -->
-      <div id="about" class="min-h-[75vh] md:w-[55vw] bg-tiffany-blue p-4 flex flex-col items-center justify-center">
+      <div id="about" class="min-h-[80vh] md:w-[55vw] bg-tiffany-blue p-4 flex flex-col items-center justify-center">
         <h2 class="text-2xl font-normal">Skills</h2>
+        <!-- TODO: Split these sections in two to add space -->
         <ul class="list-disc my-4 md:w-[45vw]">
           <li>Full stack web development using JavaScript, Java, Ruby, and more.</li>
           <li>Scripting using Python, Perl, Bash, and more, for web scraping, using APIs, etc.</li>
@@ -76,12 +77,17 @@
           <li>...</li>
         </ul>
       </div>
+
+      <!--<div class="mx-6 min-h-[80vh] flex flex-col align-middle justify-center">
+        <h1>Education</h1>
+        <p>...</p>
+      </div>-->
     </div>
   </header>
 
   <!-- List of previous and current projects -->
-  <div id="projects" class="p-4 flex flex-col items-center">
-    <h1 class="text-coral font-normal text-3xl">Highlighted Projects</h1>
+  <div id="projects" class="px-4 py-16 flex flex-col items-center">
+    <h1 class="text-lapis font-normal text-3xl">Highlighted Projects</h1>
     <!-- TODO: Add language selector -->
     <p class="py-4">
       Click for more information. More at my
@@ -92,14 +98,14 @@
   </div>
 
   <footer class="bg-gray p-4 text-center">
-    <p class="text-xs pb-2 opacity-75">Built with HTML, Tailwind, JavaScript, and hosted with GitHub Pages.</p>
+    <p class="text-xs pb-2 opacity-75">Built using HTML, Tailwind CSS, JavaScript, Perl, and hosted with GitHub Pages.</p>
   </footer>
 
   <!-- Project description popup -->
   <div id="blur" class="backdrop-blur-md flex opacity-0 fixed top-0 left-0 w-screen h-screen z-10 justify-center items-center invisible transition-opacity ease-in-out duration-300">
     <div id="description" class="bg-seashell border-dark-gray p-4 shadow-2xl rounded-lg w-[60vw] h-[90vh] max-sm:w-[90vw] max-sm:h-[75vh] overflow-scroll">
-      <button id="closeDescription" class="float-right text-purple py-0 px-2 rounded-lg hover:text-coral transition-color duration-150">x</button>
-      <h1 id="projectTitle" class="text-coral text-2xl font-normal pb-1"></h1>
+      <button id="closeDescription" class="float-right text-purple py-0 px-2 rounded-lg hover:text-lapis transition-color duration-150">x</button>
+      <h1 id="projectTitle" class="text-lapis text-2xl font-normal pb-1"></h1>
       <a target="_blank" id="projectLink" class="text-link italic">Link</a>
       <p id="projectDescription"></p>
       <div class="flex">
