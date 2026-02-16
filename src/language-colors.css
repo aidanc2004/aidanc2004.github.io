@@ -3,26 +3,30 @@
 .cpp-border { border-color: #f34b7d; }
 .cpp-bg { background-color: #f34b7d; }
 
+.c-border { border-color: #555555; }
+.c-bg { background-color: #555555; }
+
+.python-border { border-color: #3572A5; }
+.python-bg { background-color: #3572A5; }
+
+.vue-border { border-color: #41b883; }
+.vue-bg { background-color: #41b883; }
+
 .ruby-border { border-color: #701516; }
 .ruby-bg { background-color: #701516; }
 
 .javascript-border { border-color: #f1e05a; }
 .javascript-bg { background-color: #f1e05a; }
 
-.haskell-border { border-color: #5e5086; }
-.haskell-bg { background-color: #5e5086; }
-
-.java-border { border-color: #b07219; }
-.java-bg { background-color: #b07219; }
-
 .swift-border { border-color: #F05138; }
 .swift-bg { background-color: #F05138; }
+
+.haskell-border { border-color: #5e5086; }
+.haskell-bg { background-color: #5e5086; }
 
 .perl-border { border-color: #0298c3; }
 .perl-bg { background-color: #0298c3; }
 
-.c-border { border-color: #555555; }
-.c-bg { background-color: #555555; }
+.java-border { border-color: #b07219; }
+.java-bg { background-color: #b07219; }
 
-.python-border { border-color: #3572A5; }
-.python-bg { background-color: #3572A5; }

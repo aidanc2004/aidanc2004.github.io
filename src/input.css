@@ -7,7 +7,7 @@
 @layer base {
     * {
         color: #000;
-        font-size: 1.30rem;
+        font-size: 1.25rem;
         font-family: 'Roboto', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'Arial', 'sans-serif';
         font-weight: 300;
         scroll-behavior: smooth;
@@ -18,12 +18,4 @@
     *::-webkit-scrollbar {
         display: none;
     }
-
-    /*.flex-shrink-10 {
-        flex-shrink: 10;
-    }
-    
-    .flex-grow-10 {
-        flex-shrink: 10;
-    }*/
 }

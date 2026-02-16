@@ -1,4 +1,4 @@
-// Aidan Carey, 2023-2024
+// Aidan Carey, 2023-2026
 
 const projectsGrid = document.getElementById("projectsGrid");
 const description = document.getElementById("description");
@@ -20,42 +20,33 @@ const email = document.getElementById("email");
 emailParts = [".com", "protonmail", "@", "aidancarey2004", "mailto:"]
 email.href = emailParts.reverse().join('')
 
-// Projects JSON
+
 const github = "https://github.com/aidanc2004/";
 
+/* Template
+{
+        "name": "",
+        "shortDesc": "",
+        "thumb": "",
+        "description": "",
+        "link": ``,
+        "img": "",
+        "lang": ""
+    }
+*/
+
+// Projects JSON
 let projects = [
     {
-        "name": "Student Information System (WIP)",
-        "shortDesc": "Full-stack student information system in Java, Spring Boot, Bootstrap, and more.",
-        "thumb": "",
-        "description": `Inspired by picking my courses at Acadia University, I decided to write my own student information system. For the tech stack I chose Java with
-            Spring Boot, Angular, Hibernate with PostgreSQL, and Bootstrap for CSS. Students can pick courses and manage their schedule, professors can add and remove students from
-            a course and assign themselves to their course, and admins can add and remove users and courses.`,
-        "link": `${github}student-information-system`,
-        "img": "",
-        "lang": "Java",
-        "not_ready": true
-    },
-    {
-        "name": "Blog (WIP)",
-        "shortDesc": "A simple blog written with Java and Spring Boot.",
-        "thumb": "",
-        "description": `A simple blogging website where a user can login to their account, create, edit, and delete blog posts. Created using Spring Boot, Thymeleaf,
-            and PostgreSQL.`,
-        "link": `${github}blog`,
-        "img": "",
-        "lang": "Java",
-        "not_ready": true
-    },
-    {
         "name": "Print Nova Scotia Fire Ban",
-        "shortDesc": "Python script at Orchard Queen RV Park for Windows to automatically print out the current fire ban",
-        "thumb": "",
+        "shortDesc": "Python script at Orchard Queen Motel and RV Park for Windows to automatically print out the current fire ban in Nova Scotia",
+        "thumb": "PrintFireBan.png",  
         "description": `While working at Orchard Queen Motel and RV Park during the summer, we needed to print out the current fire ban for Annapolis County, Nova Scotia
-            for the campers. My manager, Matthew, asked me if I would be able to write a program that could automatically print out the page everyday at 2pm. I wrote the
-            script using Python with the win32 API.`,
+            for the campers. My manager, Matthew, asked me if I would be able to write a program that could automatically print out the page everyday at 2pm. After I finished
+            the minimum viable product, I implemented a GUI to make it more user friendly for my co-workers, as well as features they may need in the future. I wrote the script
+            using Python with Tkinter and the Win32 API.`,
         "link": `${github}print-ns-fire-ban`,
-        "img": "",
+        "img": "PrintFireBan.png",
         "lang": "Python"
     },
     {
@@ -63,14 +54,14 @@ let projects = [
         "shortDesc": "Implementation of Conway's Game of Life in C with Raylib.",
         "thumb": "Game-Of-Life.png",
         "description": `A graphical implmentation of John Conway's Game of Life, a cellular automata simulation where cells live if they have 2-3 neighbours,
-            die if they have >3 or <2 neighbours, and a dead cell becomes alive with 3 neighbours. It's in C with the Raylib graphics library I wrote while learning
-            cellular automata. It takes the number of rows and columns as command line arguments and clicking will add or remove a cell.`,
+            die if they have &gt;3 or &lt;2 neighbours, and a dead cell becomes alive with 3 neighbours. It takes the number of rows and columns as command line
+            arguments and clicking will add or remove a cell. Written in C with the Raylib graphics library.`,
         "link": `${github}game-of-life`,
         "img": "Game-Of-Life.gif",
         "lang": "C"
     },
     {
-        "name": "acorn-downloader",
+        "name": "moodle-downloader",
         "shortDesc": "A web scraper to download resources from Acadia University's Moodle (Acorn) written in Perl.",
         "description": `I always make sure to download all of the course materials from all of my classes, but it can be time consuming to scan through all of my
             courses for anything that I've missed or haven't downloaded. To make this easier, I made a web scraper using Perl with WWW::Mechanize to automatically login
@@ -92,7 +83,7 @@ let projects = [
         "name": "Wheelock Hall",
         "shortDesc": "An iOS and macOS app for Acadia University's dining hall.",
         "thumb": "Wheelock-Hall.png",
-        "description": "Being a student at Acadia, I use the online menu at Dine on Campus all the time to figure out what's on the menu,\n        but I found it annoying to constantly need go to the website to check so I decided to make my own frontend. The app was\n        also designed to work with any other school that uses Dine on Campus for it's menu with minimal tweaking.",
+        "description": "Being a student at Acadia, I use the online menu at Dine on Campus all the time to figure out what's on the menu, but I found it annoying to constantly need go to the website to check so I decided to make my own frontend. The app was also designed to work with any other school that uses Dine on Campus for it's menu with minimal tweaking. Written with Swift.",
         "link": `${github}Wheelock-Hall-App`,
         "img": "Wheelock-1.png",
         "img2": "Wheelock-2.png",
@@ -208,7 +199,7 @@ for (let projectDiv of projectsGrid.children) {
         const linkName = project.linkName;
 
         // Get description based on title
-        projectDescription.textContent = description;
+        projectDescription.innerHTML = description;
         projectLink.href = link;
 
         // Set the img src if a filepath exists

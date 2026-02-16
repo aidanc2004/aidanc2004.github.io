@@ -26,7 +26,7 @@ my $yaml = $ua->get($url) or die "Couldn't get $url: $!";
 my $languages = YAML::Tiny->read_string($yaml->content);
 
 # Hardcoded languages
-my @used_langs = ("Perl", "C", "Python", "Java", "JavaScript", "Haskell", "C++", "Swift", "Ruby");
+my @used_langs = ("Perl", "C", "Python", "Java", "JavaScript", "Haskell", "C++", "Swift", "Ruby", "Vue");
 
 # Map language names to colors
 # ex. $colors{Python} = "#3572A5"
