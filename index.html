@@ -1,107 +1,52 @@
-<!-- Aidan Carey, 2023-2026 -->
+<!-- Aidan Carey 0302409c, April 10th 2026 -->
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Music Visualizer</title>
+    <link href="./src/style.css" rel="stylesheet"/>
+    <script src="./src/script.js" defer></script>
+  </head>
+  <body>
+    <h1>Music Visualizer</h1>
 
-    <!-- Roboto Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- Visualizer -->
+    <canvas id="canvas"></canvas>
 
-    <link rel="stylesheet" href="/src/language-colors.css">
-    <link rel="stylesheet" href="/dist/output.css">
-    <script src="/src/script.js" defer></script>
-    <title>Aidan Carey</title>
-</head>
-<body class="bg-seashell">
-  <header class="flex md:flex-row flex-col">
-    <!-- Left Content (Profile) -->
-    <div class="md:sticky static h-[100vh] md:w-[40vw] w-[100vw] top-0">
-      <div class="bg-lapis h-[100vh] md:w-[40vw] w-[100vw] flex flex-col align-middle justify-center">
-        <!-- Photo -->
-        <div class="flex xl:flex-row flex-col items-center m-4">
-          <img src="/src/imgs/Head Shot.png" alt="Aidan" class="rounded-full aspect-square h-40">
-          <div class="ml-4">
-            <h1 class="text-3xl font-normal text-seashell">Aidan Carey</h1>
-            <p class="opacity-80 text-xl text-seashell">Computer Science Student and Programming Hobbyist at Acadia University</p>
-            <!-- Contact -->
-            <ul class="flex items-center">
-              <li>
-                <a target="_blank" href="" id="email"> <img class="w-9" src="/src/imgs/icons/email.png" alt="email"> </a>
-              </li>
-              <li class="ml-1 mr-2">
-                <a target="_blank" href="https://github.com/aidanc2004"> <img class="w-7" src="/src/imgs/icons/github-mark-white.svg" alt="GitHub"> </a>
-              </li>
-              <li>
-                <a target="_blank" href="https://www.linkedin.com/in/aidan-carey-aaa9b6217/"> <img class="w-7" src="/src/imgs/icons/linkedin.png" alt="LinkedIn"> </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
+    <!-- Audio file input and controls -->
+    <div id="inputs">
+      <label id="label1" for="input1">Sample 1:</label>
+      <input
+        name="input1"
+        id="input1"
+        type="file"
+        accept="audio/*"
+      />
+      <br />
+      <input min="0" max="100" id="volume1" name="volume1" type="range" value="100" />
+
+      <br />
+      
+      <label id="label2" for="input2">Sample 2:</label>
+      <input
+        name="input2"
+        id="input2"
+        type="file"
+        accept="audio/*"
+      />
+      <br />
+      <input min="0" max="100" id="volume2" name="volume2" type="range" value="100" />
+
+      <br />
+      <button id="start" onclick="start()">Start</button>
+      <button id="stop" onclick="stop()">Stop</button>
     </div>
-    <!-- Right Content (About, skills, etc) -->
-    <div class="md:w-[60vw]">
-      <div class="mx-6 min-h-[100vh] flex flex-col align-middle justify-center">
-        <h2 class="font-normal">Hello,</h2>
-        <p class="my-6">
-          I'm Aidan. I'm a computer science student and computer programming hobbyist. I started experimenting with game
-          development in grade 6, started writing simple programs with Python and Java in grade 9, and ever since I've
-          had a deep passion for everything computer science.
-        </p>
-        <p>
-          I have experience in web development and systems programming.
-        </p>
-      </div>
-      <!-- Information about myself -->
-      <div id="about" class="min-h-[80vh] md:w-[60vw] bg-tiffany-blue p-4 flex flex-col items-center justify-center">
-        <h2 class="text-2xl font-normal">Skills</h2>
-        <ul class="list-disc my-4 md:w-[45vw]">
-          <li>Backend web development with Java + Spring Boot and Javascript</li>
-          <li>Frontend web development using JavaScript using VueJS and Angular.</li>
-          <li>Scripting using Python, Perl, Bash, and more.</li>
-          <li>Systems and low level programming with C/C++.</li>
-          <li>Quick at picking up new programming languages, skills, and technologies.</li>
-        </ul>
-      </div>
 
-      <!--<div class="mx-6 min-h-[80vh] flex flex-col align-middle justify-center">
-        <h1>Education</h1>
-        <p>...</p>
-      </div>-->
-    </div>
-  </header>
+    <p id="error"></p>
 
-  <!-- List of previous and current projects -->
-  <div id="projects" class="px-4 py-16 flex flex-col items-center">
-    <h1 class="text-lapis font-normal text-3xl">Highlighted Projects</h1>
-    <p class="py-4">
-      Click for more information. More at my
-      <a target="_blank" href="https://github.com/aidanc2004/" class="text-link italic">GitHub</a>
-    </p>
-    <!-- Grid of projects -->
-    <div id="projectsGrid" class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 w-[90vw]"></div>
-  </div>
-
-  <footer class="bg-gray p-4 text-center">
-    <p class="text-xs pb-2 opacity-75">Built using HTML, Tailwind CSS, JavaScript, Perl, and hosted with GitHub Pages.</p>
-  </footer>
-
-  <!-- Project description popup -->
-  <div id="blur" class="backdrop-blur-md flex opacity-0 fixed top-0 left-0 w-screen h-screen z-10 justify-center items-center invisible transition-opacity ease-in-out duration-300">
-    <div id="description" class="bg-seashell border-dark-gray p-4 shadow-2xl rounded-lg w-[60vw] h-[90vh] max-sm:w-[90vw] max-sm:h-[75vh] overflow-scroll">
-      <button id="closeDescription" class="float-right text-purple py-0 px-2 rounded-lg hover:text-lapis transition-color duration-150">x</button>
-      <h1 id="projectTitle" class="text-lapis text-2xl font-normal pb-1"></h1>
-      <a target="_blank" id="projectLink" class="text-link italic">Link</a>
-      <p id="projectDescription"></p>
-      <div class="flex">
-        <img id="projectImg" class="pt-4 max-w-[100%] object-contain" />
-        <img id="projectImg2" class="pt-4 max-w-[50%] object-contain" />
-      </div>
-    </div>
-  </div>
-</body>
+    <footer>
+      <p>Aidan Carey 0302409c, April 10th 2026</p>
+    </footer>
+  </body>
 </html>

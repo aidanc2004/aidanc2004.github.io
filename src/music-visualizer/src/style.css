@@ -1,0 +1,38 @@
+/* Aidan Carey 0302409c, April 10th 2026 */
+
+* {
+  font-family: Verdana, sans-serif;
+  text-align: center;
+}
+
+#error {
+  color: red;
+  font-weight: bold;
+}
+
+#label1 {
+  color: rgb(255, 100, 0);
+}
+
+#label2 {
+  color: rgb(0, 100, 255);
+}
+
+#inputs {
+  margin-top: 10px;
+}
+
+canvas {
+  width: 95%;
+  min-width: 300px;
+  max-width: 800px;
+  max-height: 550px;
+  aspect-ratio: 4/3;;
+  background: black;
+}
+
+footer {
+  color: gray;
+  position: absolute;
+  bottom: 0;
+}
