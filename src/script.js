@@ -40,7 +40,7 @@ let projects = [
     {
         "name": "Print Nova Scotia Fire Ban",
         "shortDesc": "Python script at Orchard Queen Motel and RV Park for Windows to automatically print out the current fire ban in Nova Scotia",
-        "thumb": "PrintFireBan.png",  
+        "thumb": "PrintFireBan.PNG",  
         "description": `While working at Orchard Queen Motel and RV Park during the summer, we needed to print out the current fire ban for Annapolis County, Nova Scotia
             for the campers. My manager, Matthew, asked me if I would be able to write a program that could automatically print out the page everyday at 2pm. After I finished
             the minimum viable product, I implemented a GUI to make it more user friendly for my co-workers, as well as features they may need in the future. I wrote the script
